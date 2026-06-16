@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Facebook Groups OS | High-Touch Pipeline for B2B Tech</title>
+<title>Facebook Groups OS | Community-Led Growth for B2B Tech</title>
 <meta name="description" content="We build and manage high-intent Facebook communities for B2B SaaS. Scale your touchpoints, educate your ICP, and build defensible moats.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%234f46e5%22/><text x=%2250%22 y=%2270%22 font-family=%22Arial%22 font-size=%2265%22 font-weight=%22bold%22 fill=%22white%22 text-anchor=%22middle%22>f</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,313 +17,274 @@ body{font-family:'Inter',sans-serif;background:#f8fafc;color:#0f172a;-webkit-fon
 img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
 
 /* Design System */
-:root{--brand:#4f46e5;--brand-hover:#4338ca;--brand-light:#e0e7ff;--text-dark:#0f172a;--text-body:#475569;--bg-white:#ffffff;--bg-off:#f1f5f9;--border:#e2e8f0;--shadow-sm:0 1px 2px 0 rgb(0 0 0 / 0.05);--shadow-md:0 4px 6px -1px rgb(0 0 0 / 0.1);--shadow-lg:0 20px 25px -5px rgb(0 0 0 / 0.1);--r:12px;}
+:root{--brand:#4f46e5;--brand-hover:#4338ca;--brand-light:#e0e7ff;--text-dark:#020617;--text-body:#334155;--text-muted:#64748b;--bg-white:#ffffff;--bg-off:#f1f5f9;--bg-dark:#0f172a;--border:#e2e8f0;--shadow-sm:0 1px 2px 0 rgb(0 0 0 / 0.05);--shadow-md:0 4px 6px -1px rgb(0 0 0 / 0.1);--shadow-lg:0 20px 25px -5px rgb(0 0 0 / 0.1);--shadow-glow:0 0 40px rgba(79,70,229,0.15);--radius:16px;}
 
 /* Typography */
 h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text-dark);letter-spacing:-0.02em}
-.d1{font-weight:800;font-size:clamp(40px,5vw,68px);line-height:1.05;margin-bottom:24px}
-.d2{font-weight:800;font-size:clamp(32px,4vw,48px);line-height:1.1;margin-bottom:20px}
-.d3{font-weight:800;font-size:clamp(24px,3vw,32px);line-height:1.2;margin-bottom:16px}
-.lead{font-size:18px;line-height:1.7;color:var(--text-body)}
+.d1{font-weight:800;font-size:clamp(44px,6vw,72px);line-height:1.05;margin-bottom:24px}
+.d2{font-weight:800;font-size:clamp(36px,4.5vw,52px);line-height:1.1;margin-bottom:20px}
+.d3{font-weight:700;font-size:clamp(24px,3vw,32px);line-height:1.2;margin-bottom:16px}
+.lead{font-size:18px;line-height:1.7;color:var(--text-body);font-weight:400}
+.lead-large{font-size:22px;line-height:1.6;color:var(--text-body)}
 .eyebrow{font-size:13px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand);margin-bottom:16px;display:inline-block}
 
-/* Buttons & Inputs */
+/* Interactive Elements */
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 32px;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;border-radius:8px;transition:all 0.2s;cursor:pointer;white-space:nowrap;border:none}
 .btn-primary{background:var(--brand);color:#fff;box-shadow:0 4px 14px rgba(79,70,229,0.3)}
-.btn-primary:hover{background:var(--brand-hover);transform:translateY(-2px)}
+.btn-primary:hover{background:var(--brand-hover);transform:translateY(-2px);box-shadow:0 6px 20px rgba(79,70,229,0.4)}
 .btn-outline{background:transparent;color:var(--text-dark);border:1px solid #cbd5e1}
 .btn-outline:hover{background:#f8fafc;border-color:#94a3b8}
 input[type="email"], input[type="text"] {width:100%;padding:16px;border:1px solid var(--border);border-radius:8px;font-size:16px;font-family:'Inter';margin-bottom:16px;outline:none;transition:border 0.2s}
 input[type="email"]:focus, input[type="text"]:focus {border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-light)}
 
-/* Layout */
-.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+/* Layouts */
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
 .wrap-narrow{max-width:900px;margin:0 auto;padding:0 24px}
-.sec{padding:100px 0}
+.sec{padding:120px 0}
 .text-center{text-align:center}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.8s ease-out, transform 0.8s ease-out}
+.fade-in.visible{opacity:1;transform:translateY(0)}
 
 /* Navigation */
 nav{background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border)}
-.nav-inner{height:80px;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 24px}
-.logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;display:flex;align-items:center;gap:8px}
+.nav-inner{height:80px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;display:flex;align-items:center;gap:10px}
 .logo-icon{width:32px;height:32px;background:var(--brand);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px}
 
 /* Modal */
-.modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,0.8);backdrop-filter:blur(4px);z-index:1000;display:none;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s}
+.modal-overlay{position:fixed;inset:0;background:rgba(2,6,23,0.8);backdrop-filter:blur(8px);z-index:1000;display:none;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s}
 .modal-overlay.active{display:flex;opacity:1}
-.modal-content{background:#fff;border-radius:16px;padding:48px;max-width:500px;width:90%;position:relative;box-shadow:var(--shadow-lg)}
-.modal-close{position:absolute;top:20px;right:20px;font-size:24px;cursor:pointer;color:var(--text-body);background:none;border:none}
+.modal-content{background:#fff;border-radius:var(--radius);padding:48px;max-width:500px;width:90%;position:relative;box-shadow:var(--shadow-lg)}
+.modal-close{position:absolute;top:20px;right:20px;font-size:24px;cursor:pointer;color:var(--text-muted);background:none;border:none}
 
-/* Hero Section */
-.hero{position:relative;padding:80px 0 100px;background:linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center}
-.hero-badge{display:inline-flex;padding:6px 16px;background:var(--brand-light);color:var(--brand);border-radius:100px;font-size:13px;font-weight:600;margin-bottom:24px}
-.hero-capture{background:#fff;border:1px solid var(--border);padding:8px;border-radius:12px;display:flex;gap:8px;margin-top:40px;box-shadow:var(--shadow-sm);max-width:480px}
+/* Hero */
+.hero{padding:100px 0 140px;background:radial-gradient(circle at top right, #e0e7ff 0%, #f8fafc 40%);position:relative;overflow:hidden}
+.hero-badge{display:inline-flex;padding:6px 16px;background:rgba(79,70,229,0.1);color:var(--brand);border-radius:100px;font-size:13px;font-weight:700;margin-bottom:32px;border:1px solid rgba(79,70,229,0.2)}
+.hero-capture{background:#fff;border:1px solid var(--border);padding:8px;border-radius:12px;display:flex;gap:8px;margin-top:48px;box-shadow:var(--shadow-md);max-width:500px}
 .hero-capture input{margin-bottom:0;border:none;background:transparent;flex-grow:1;padding:12px 16px}
 .hero-capture input:focus{box-shadow:none}
 
-/* Clear FB Feed Mockup */
-.feed-container{background:#f0f2f5;border-radius:16px;border:1px solid var(--border);padding:20px;height:650px;overflow-y:auto;box-shadow:var(--shadow-lg)}
-.feed-header{font-family:'Plus Jakarta Sans';font-weight:700;font-size:18px;margin-bottom:20px;color:#1c1e21;display:flex;align-items:center;justify-content:space-between}
-.fb-post{background:#fff;border-radius:8px;padding:16px;margin-bottom:20px;box-shadow:var(--shadow-sm);border:1px solid #e5e7eb}
-.fb-user{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.fb-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;font-size:14px;flex-shrink:0}
-.fb-meta{line-height:1.3}
-.fb-name{font-weight:600;font-size:14px;color:#1c1e21}
-.fb-time{font-size:12px;color:#65676b}
-.fb-content{font-size:15px;color:#050505;line-height:1.5;margin-bottom:12px}
-.fb-stats{display:flex;justify-content:space-between;font-size:13px;color:#65676b;padding-bottom:12px;border-bottom:1px solid #ced0d4;margin-bottom:12px}
-.highlight-post{border-left:4px solid var(--brand)}
+/* Funnel Module */
+.funnel-box{background:var(--bg-white);border-radius:var(--radius);border:1px solid var(--border);padding:48px;box-shadow:var(--shadow-md);position:relative}
+.funnel-row{display:flex;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--border)}
+.funnel-row:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.f-step{font-family:'Plus Jakarta Sans';font-weight:700;width:120px;color:var(--text-muted);font-size:14px;text-transform:uppercase;letter-spacing:0.05em}
+.f-old{flex:1;color:var(--text-body);text-decoration:line-through;opacity:0.6}
+.f-new{flex:1;color:var(--brand);font-weight:600;display:flex;align-items:center;gap:12px}
 
-/* The SaaS Problem Section */
-.prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:60px}
-.prob-card{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;padding:40px 32px;box-shadow:var(--shadow-sm)}
-.prob-icon{width:48px;height:48px;background:var(--brand-light);color:var(--brand);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:20px}
+/* Deep Use Cases */
+.uc-card{background:var(--bg-white);border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform 0.3s}
+.uc-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
+.uc-header{background:var(--bg-dark);padding:32px;color:#fff}
+.uc-tag{display:inline-block;padding:4px 12px;background:rgba(255,255,255,0.1);border-radius:100px;font-size:12px;font-weight:600;margin-bottom:16px;letter-spacing:0.05em}
+.uc-body{padding:32px}
+.uc-list{list-style:none;margin-top:24px}
+.uc-list li{margin-bottom:16px;display:flex;gap:12px;font-size:15px;color:var(--text-body)}
+.uc-list li::before{content:'→';color:var(--brand);font-weight:bold}
 
-/* Anecdote Section */
-.anecdote{background:#0f172a;color:#fff;border-radius:24px;padding:80px 60px;margin:100px 0;position:relative;overflow:hidden;box-shadow:0 25px 50px -12px rgba(79,70,229,0.3)}
-.anecdote-bg{position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle, rgba(79,70,229,0.3) 0%, transparent 70%);border-radius:50%}
-.quote-mark{font-family:'Times New Roman',serif;font-size:180px;color:rgba(255,255,255,0.05);position:absolute;top:-40px;left:20px;line-height:1}
-.anecdote-content{position:relative;z-index:1;font-size:24px;font-weight:500;line-height:1.6;font-style:italic;max-width:900px}
-.anecdote-author{margin-top:40px;display:flex;align-items:center;gap:20px}
-.author-info strong{display:block;font-size:18px}
-.author-info span{font-size:14px;color:#94a3b8;font-style:normal;margin-top:4px}
+/* Post Mockups */
+.fb-post{background:#fff;border-radius:8px;padding:20px;box-shadow:var(--shadow-sm);border:1px solid var(--border);margin-bottom:16px;font-size:14px;line-height:1.5}
+.fb-user{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.fb-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;font-size:12px;flex-shrink:0}
+.fb-meta{line-height:1.2}
+.fb-name{font-weight:600;color:var(--text-dark)}
+.fb-time{font-size:12px;color:var(--text-muted)}
+.highlight-post{border-left:4px solid var(--brand);background:var(--brand-light);border-color:var(--brand)}
 
-/* Use Cases Section */
-.use-case-row{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:100px}
-.use-case-row:nth-child(even){direction:rtl}
-.use-case-row:nth-child(even) > * {direction:ltr}
-.uc-img{background:#f1f5f9;border-radius:16px;padding:40px;border:1px solid var(--border);position:relative}
-.uc-tag{position:absolute;top:-15px;left:40px;background:var(--brand);color:#fff;padding:6px 16px;border-radius:100px;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase}
-.uc-list{margin-top:24px;list-style:none}
-.uc-list li{margin-bottom:16px;display:flex;gap:12px;color:var(--text-body);font-size:16px}
-.uc-list li::before{content:'✓';color:var(--brand);font-weight:bold}
+/* Enterprise Moat Section */
+.moat-sec{background:var(--bg-dark);color:#fff;padding:120px 0}
+.moat-sec h2,.moat-sec h3{color:#fff}
+.moat-sec .lead{color:#94a3b8}
+.logo-cloud{display:flex;gap:40px;opacity:0.5;filter:grayscale(100%);margin-top:40px;flex-wrap:wrap}
+.moat-quote{font-size:24px;font-style:italic;font-family:'Plus Jakarta Sans';line-height:1.5;margin-top:40px;padding-left:32px;border-left:4px solid var(--brand)}
 
-/* Pricing / ROI Table */
-.roi-table{width:100%;border-collapse:collapse;margin-top:60px;background:var(--bg-white);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-md)}
+/* ROI Table */
+.roi-table{width:100%;border-collapse:collapse;background:var(--bg-white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg)}
 .roi-table th, .roi-table td{padding:24px;text-align:left;border-bottom:1px solid var(--border)}
-.roi-table th{background:#f8fafc;font-family:'Plus Jakarta Sans';font-weight:700;color:var(--text-dark);font-size:15px;text-transform:uppercase;letter-spacing:0.05em}
+.roi-table th{background:#f8fafc;font-family:'Plus Jakarta Sans';font-weight:700;color:var(--text-dark);font-size:14px;text-transform:uppercase;letter-spacing:0.05em}
 .roi-highlight{background:var(--brand-light);color:var(--brand);font-weight:700;border-radius:8px;padding:6px 12px;display:inline-block}
 
-/* Highlight Text */
+/* Utility */
 .hl{color:var(--brand)}
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-inner">
+  <div class="wrap nav-inner">
     <div class="logo">
       <div class="logo-icon">f</div>
       Facebook Groups OS
     </div>
-    <div>
-      <button class="btn btn-primary" onclick="openModal()">Get The Playbook</button>
-    </div>
+    <button class="btn btn-primary" onclick="openModal()">Get The Operations Playbook</button>
   </div>
 </nav>
 
 <div class="modal-overlay" id="leadModal">
   <div class="modal-content">
     <button class="modal-close" onclick="closeModal()">&times;</button>
-    <div class="logo-icon" style="margin-bottom:20px;width:48px;height:48px;font-size:24px">f</div>
-    <h3 class="d3">Get The Tactical Playbook</h3>
-    <p class="lead" style="margin-bottom:32px;font-size:15px">Download the exact frameworks, content cadences, and DM scripts we use to incubate B2B SaaS pipeline.</p>
+    <div class="logo-icon" style="margin-bottom:24px;width:48px;height:48px;font-size:24px">f</div>
+    <h3 class="d3">The SaaS Incubation Playbook</h3>
+    <p class="lead" style="margin-bottom:32px;font-size:15px">Download our exact 30-day architecture plan. Includes naming formulas, the 4-1-1 content matrix, and our word-for-word DM qualification scripts.</p>
     <form onsubmit="submitForm(event)">
       <input type="text" id="modalName" placeholder="First Name" required>
       <input type="email" id="modalEmail" placeholder="Work Email" required>
-      <button type="submit" class="btn btn-primary" style="width:100%" id="modalBtn">Send Me The Playbook</button>
+      <button type="submit" class="btn btn-primary" style="width:100%;padding:18px" id="modalBtn">Access The Documentation</button>
     </form>
-    <p style="font-size:12px;color:#94a3b8;margin-top:16px;text-align:center">We don't spam. Unsubscribe anytime.</p>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:20px;text-align:center">High-signal operations only. Unsubscribe anytime.</p>
   </div>
 </div>
 
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="hero-badge">The Owned Attention Playbook</div>
+  <div class="wrap grid-2">
+    <div class="fade-in">
+      <div class="hero-badge">Owned Attention Pipeline</div>
       <h1 class="d1">Ads buy clicks.<br>Communities build <span class="hl">evangelists.</span></h1>
-      <p class="lead">Complex SaaS products require high-touch education. A fleeting ad scroll isn't enough. We build fully-managed Facebook groups to repeatedly demonstrate your value, educate your ICP, and systematically convert trust into booked meetings.</p>
+      <p class="lead-large">Complex B2B software requires high-touch education. A fleeting ad scroll isn't enough. We build fully-managed, privately owned Facebook groups that repeatedly demonstrate your value, educate your ICP, and convert trust into booked meetings.</p>
       
       <form class="hero-capture" onsubmit="submitForm(event, true)">
         <input type="email" id="heroEmail" placeholder="Enter your work email..." required>
-        <button type="submit" class="btn btn-primary" style="padding:12px 24px" id="heroBtn">Get Playbook</button>
+        <button type="submit" class="btn btn-primary" id="heroBtn">Get The Playbook</button>
       </form>
-      <div style="font-size:13px;color:#94a3b8;margin-top:12px;display:flex;align-items:center;gap:8px">
-        <span style="color:#10b981">★ ★ ★ ★ ★</span> Used by 100+ B2B Founders
-      </div>
+      <p style="font-size:14px;color:var(--text-muted);margin-top:16px">The exact operating system we use for our $1,997/mo clients.</p>
     </div>
 
-    <div class="feed-container">
-      <div class="feed-header">
-        B2B Founders & GTM Strategies
-        <span style="font-size:12px;color:#65676b;font-weight:400">14.2K Members</span>
+    <div class="funnel-box fade-in" style="transition-delay:0.2s">
+      <h3 class="d3" style="font-size:20px;margin-bottom:32px">The B2B Funnel Shift</h3>
+      
+      <div class="funnel-row">
+        <div class="f-step">Acquisition</div>
+        <div class="f-old">Rent Meta Ads</div>
+        <div class="f-new"><span style="font-size:20px">📦</span> Build a Branded Honeypot Group</div>
       </div>
       
-      <div class="fb-post">
-        <div class="fb-user">
-          <div class="fb-avatar" style="background:#475569">DK</div>
-          <div class="fb-meta"><div class="fb-name">David K.</div><div class="fb-time">Yesterday at 9:00 AM</div></div>
-        </div>
-        <div class="fb-content">
-          Is anyone else finding cold outbound completely dead right now? We are getting killed on meeting show rates. Need a new workflow.
-        </div>
-        <div class="fb-stats"><span>45 Likes</span><span>22 Comments</span></div>
+      <div class="funnel-row">
+        <div class="f-step">Nurture</div>
+        <div class="f-old">Automated Email Spam</div>
+        <div class="f-new"><span style="font-size:20px">🧠</span> High-Value Workflow Teardowns</div>
       </div>
 
-      <div class="fb-post highlight-post">
-        <div class="fb-user">
-          <div class="fb-avatar" style="background:var(--brand)">KN</div>
-          <div class="fb-meta">
-            <div class="fb-name">Kris N. <span style="color:var(--brand);font-size:12px;margin-left:4px">✓ Admin</span></div>
-            <div class="fb-time">Yesterday at 2:30 PM</div>
-          </div>
-        </div>
-        <div class="fb-content">
-          <strong>The exact playbook we use to double show rates:</strong><br><br>
-          We stopped sending generic cadences. Instead, we pull hyper-specific local data for every prospect and embed it natively. Here is a 3-minute video showing the exact workflow we use to automate this...
-          <div style="margin-top:12px;background:#e5e7eb;height:140px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#65676b">▶ Play Video Demo</div>
-        </div>
-        <div class="fb-stats"><span>112 Likes</span><span>38 Comments</span></div>
+      <div class="funnel-row">
+        <div class="f-step">Qualification</div>
+        <div class="f-old">Forced SDR Calls</div>
+        <div class="f-new"><span style="font-size:20px">💬</span> Private, Contextual DM Handoffs</div>
       </div>
 
-      <div class="fb-post">
-        <div class="fb-user">
-          <div class="fb-avatar" style="background:var(--brand)">KN</div>
-          <div class="fb-meta">
-            <div class="fb-name">Kris N. <span style="color:var(--brand);font-size:12px;margin-left:4px">✓ Admin</span></div>
-            <div class="fb-time">2 hrs ago</div>
-          </div>
-        </div>
-        <div class="fb-content">
-          Hey Founders! Since the workflow video yesterday blew up, I'm giving away <strong>3 free lifetime software licenses</strong> to bootstrapped founders in this group so you can run it yourself. Drop your startup link below to enter 👇
-        </div>
-        <div class="fb-stats"><span style="color:var(--brand);font-weight:600">❤️ 204 Likes</span><span>89 Comments</span></div>
+      <div class="funnel-row">
+        <div class="f-step">Conversion</div>
+        <div class="f-old">20% Demo Show Rate</div>
+        <div class="f-new" style="color:#10b981"><span style="font-size:20px">🎯</span> 80%+ Demo Show Rate (Pre-Sold)</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sec" style="background:var(--bg-white)">
-  <div class="wrap text-center">
-    <span class="eyebrow">The High-Touch Deficit</span>
-    <h2 class="d2">Ads are transactional. SaaS is a relationship.</h2>
-    <p class="lead" style="max-width:800px;margin:0 auto">You can buy your way to the top of the feed, but well-funded tech companies face a different problem: proving complex value over time. If your product requires education to sell, you need an incubation engine.</p>
-    
-    <div class="prob-grid text-left" style="text-align:left">
-      <div class="prob-card">
-        <div class="prob-icon">👀</div>
-        <h3 class="d3" style="font-size:20px">The "Single Touch" Fallacy</h3>
-        <p class="lead" style="font-size:15px">B2B buyers require 7-13 touches before trusting a vendor. Forcing a complex demo into a single Meta ad click skyrockets your CAC and yields low-intent, easily-churned leads.</p>
+<section class="sec">
+  <div class="wrap">
+    <div class="text-center fade-in" style="margin-bottom:80px">
+      <span class="eyebrow">The Architecture</span>
+      <h2 class="d2">One methodology. Any tech vertical.</h2>
+      <p class="lead" style="max-width:800px;margin:0 auto">Whether you are selling a highly technical enterprise automation suite, a PLG networking tool, or vertical SaaS, the architecture of owned-attention scales universally.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="uc-card fade-in">
+        <div class="uc-header" style="background:#0f172a">
+          <div class="uc-tag">High-Touch Automation SaaS</div>
+          <h3 style="color:#fff;font-size:24px;margin:0">The Complexity Solver</h3>
+        </div>
+        <div class="uc-body">
+          <p class="lead" style="font-size:15px;margin-bottom:24px">For software with infinite use-cases (like Viktor or Make), the group acts as a live, daily masterclass. You aren't pitching features; you are giving away operational recipes.</p>
+          <div class="fb-post">
+            <div class="fb-user"><div class="fb-avatar" style="background:var(--brand)">KN</div><div><div class="fb-name">Kris N.</div></div></div>
+            <div><strong>Workflow Teardown:</strong> How we scraped 4k local leads and booked 12 meetings in 48 hours using this specific data-enrichment node...</div>
+          </div>
+          <ul class="uc-list">
+            <li>Founders join to steal your free "recipes".</li>
+            <li>They realize executing it manually is impossible.</li>
+            <li>They buy your software to execute it.</li>
+          </ul>
+        </div>
       </div>
-      <div class="prob-card">
-        <div class="prob-icon">🧩</div>
-        <h3 class="d3" style="font-size:20px">Demonstrating Varying Use-Cases</h3>
-        <p class="lead" style="font-size:15px">A static landing page can't speak to every niche. A Facebook group allows you to incubate leads by showing them micro-playbooks tailored exactly to their industry over several weeks.</p>
+
+      <div class="uc-card fade-in" style="transition-delay:0.1s">
+        <div class="uc-header" style="background:#1e1b4b">
+          <div class="uc-tag" style="background:var(--brand)">Professional Networks</div>
+          <h3 style="color:#fff;font-size:24px;margin:0">The Network Incubator</h3>
+        </div>
+        <div class="uc-body">
+          <p class="lead" style="font-size:15px;margin-bottom:24px">For exclusive networks (like Boardy Pro), the value <em>is</em> the people. A free Facebook group acts as the ultimate top-of-funnel magnet, simulating the premium experience.</p>
+          <div class="fb-post">
+            <div class="fb-user"><div class="fb-avatar" style="background:#475569">SJ</div><div><div class="fb-name">Sarah J.</div></div></div>
+            <div>Shoutout to this community. I posted about needing a fractional CMO who understands hardware, and the intro I got here saved our Q3.</div>
+          </div>
+          <ul class="uc-list">
+            <li>Create a massive free tier for a persona.</li>
+            <li>Moderate heavily to ensure high quality.</li>
+            <li>Gate the best data behind the paid tier.</li>
+          </ul>
+        </div>
       </div>
-      <div class="prob-card">
-        <div class="prob-icon">🛡️</div>
-        <h3 class="d3" style="font-size:20px">The Ultimate Churn Defense</h3>
-        <p class="lead" style="font-size:15px">By nurturing an environment where users help each other troubleshoot and share wins, your software transcends being just a "tool." It becomes an integrated ecosystem, drastically raising LTV.</p>
+
+      <div class="uc-card fade-in" style="transition-delay:0.2s">
+        <div class="uc-header" style="background:#064e3b">
+          <div class="uc-tag" style="background:#10b981">Vertical SaaS</div>
+          <h3 style="color:#fff;font-size:24px;margin:0">The Industry Watercooler</h3>
+        </div>
+        <div class="uc-body">
+          <p class="lead" style="font-size:15px;margin-bottom:24px">If you sell to Roofers or Gyms, you don't need scale—you need concentration. We build the "watercooler" where these operators complain about their operations.</p>
+          <div class="fb-post">
+            <div class="fb-user"><div class="fb-avatar" style="background:#047857">RC</div><div><div class="fb-name">Roofing CEO</div></div></div>
+            <div>What is everyone using to automate follow-ups after a storm? We have leads but our sales guys are dropping the ball.</div>
+          </div>
+          <ul class="uc-list">
+            <li>Capture search intent for "Roofing Owners".</li>
+            <li>Monitor for operational complaints.</li>
+            <li>Deploy your AE into the DMs immediately.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="moat-sec">
+  <div class="wrap grid-2">
+    <div class="fade-in">
+      <span class="eyebrow" style="color:#818cf8">Defensible Enterprise Value</span>
+      <h2 class="d2">Communities trigger massive acquisitions.</h2>
+      <p class="lead">Code can be copied. Features can be cloned over a weekend by AI. A thriving, deeply engaged user community cannot be replicated. It is the ultimate defensible moat in modern SaaS.</p>
+      <div class="logo-cloud">
+        <div style="font-size:24px;font-weight:800;font-family:'Plus Jakarta Sans'">HubSpot</div>
+        <div style="font-size:24px;font-weight:800;font-family:'Plus Jakarta Sans'">Figma</div>
+        <div style="font-size:24px;font-weight:800;font-family:'Plus Jakarta Sans'">Notion</div>
+      </div>
+    </div>
+    <div class="fade-in">
+      <div class="moat-quote">
+        "When we were negotiating the sale of The Hustle to HubSpot, the HubSpot executives were actively lurking in the Trends Facebook group. They saw the caliber of the conversation. They saw how sticky it was. That community engagement heavily drove the acquisition thesis."
+      </div>
+      <div style="margin-top:32px;display:flex;align-items:center;gap:16px;padding-left:32px">
+        <div class="fb-avatar" style="width:56px;height:56px;font-size:20px;background:#4f46e5">SP</div>
+        <div>
+          <strong style="display:block;font-size:18px;font-family:'Plus Jakarta Sans';color:#fff">Sam Parr</strong>
+          <span style="color:#94a3b8;font-size:14px">Founder, The Hustle (Acquired by HubSpot)</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <section class="sec" style="background:var(--bg-off)">
-  <div class="wrap">
-    <div class="text-center" style="margin-bottom:80px">
-      <span class="eyebrow">Proven Frameworks</span>
-      <h2 class="d2">One methodology. Any tech vertical.</h2>
-      <p class="lead" style="max-width:700px;margin:0 auto">Whether you are selling a robust enterprise automation suite or a PLG networking tool, the architecture of owned-attention remains the same.</p>
-    </div>
-
-    <div class="use-case-row">
-      <div class="uc-img">
-        <div class="uc-tag">Use Case 1: High-Touch Automation</div>
-        <div class="fb-post" style="margin-bottom:0;box-shadow:var(--shadow-md)">
-          <div class="fb-user"><div class="fb-avatar" style="background:var(--brand)">KN</div><div><div class="fb-name">Group Admin</div></div></div>
-          <div class="fb-content"><strong>Case Study:</strong> How a local agency scraped 4,000 hyper-niche leads and booked 12 meetings in 48 hours using the new data-enrichment node. Here is the exact node tree architecture...</div>
-        </div>
-      </div>
-      <div>
-        <h3 class="d2" style="font-size:32px">The Complexity Solver</h3>
-        <p class="lead">For software with a steep learning curve or infinite use-cases (like Viktor, Zapier, or Make), the group acts as a live, daily webinar. You aren't pitching the software; you are giving away the recipes.</p>
-        <ul class="uc-list">
-          <li>Founders join to steal your free workflow "recipes".</li>
-          <li>They realize executing the recipe manually is too hard.</li>
-          <li>They buy your software to execute it for them.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="use-case-row">
-      <div class="uc-img">
-        <div class="uc-tag" style="background:#0f172a">Use Case 2: Professional Networks</div>
-        <div class="fb-post" style="margin-bottom:0;box-shadow:var(--shadow-md)">
-          <div class="fb-user"><div class="fb-avatar" style="background:#0f172a">SJ</div><div><div class="fb-name">Startup Founder</div></div></div>
-          <div class="fb-content">Just wanted to give a massive shoutout to this community. I posted last week about needing a fractional CMO who understands hardware, and the intro I got here literally saved our Q3.</div>
-        </div>
-      </div>
-      <div>
-        <h3 class="d2" style="font-size:32px">The Network Incubator</h3>
-        <p class="lead">For membership networks (like Boardy Pro or exclusive founder tiers), the value *is* the people. A Facebook group acts as the ultimate top-of-funnel lead magnet, simulating the premium experience.</p>
-        <ul class="uc-list">
-          <li>Create a massive free tier group built around a specific persona.</li>
-          <li>Moderate heavily to ensure high-quality discussion.</li>
-          <li>Gate the most valuable introductions and datasets behind your paid network.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="use-case-row">
-      <div class="uc-img">
-        <div class="uc-tag" style="background:#10b981">Use Case 3: Vertical SaaS</div>
-        <div class="fb-post" style="margin-bottom:0;box-shadow:var(--shadow-md)">
-          <div class="fb-user"><div class="fb-avatar" style="background:#10b981">RC</div><div><div class="fb-name">Roofing CEO</div></div></div>
-          <div class="fb-content">What is everyone using to automate their follow-ups after a storm hits? We have the leads but our sales guys are dropping the ball on the 3rd and 4th touchpoints.</div>
-        </div>
-      </div>
-      <div>
-        <h3 class="d2" style="font-size:32px">The Industry Watercooler</h3>
-        <p class="lead">If you sell software exclusively to Roofers, Dentists, or Gym Owners, you don't need a massive audience—you need a highly concentrated one. We build the "watercooler" where these operators complain about their daily operations.</p>
-        <ul class="uc-list">
-          <li>Capture organic search intent for "Roofing Business Owners".</li>
-          <li>Monitor the group for operational complaints.</li>
-          <li>Deploy your AE into the DMs the moment a pain point matches your software's solution.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" style="background:var(--bg-white)">
-  <div class="wrap anecdote">
-    <div class="quote-mark">"</div>
-    <div class="anecdote-bg"></div>
-    <div class="anecdote-content">
-      "When we were negotiating the sale of The Hustle to HubSpot, the HubSpot executives were actively lurking in the Trends Facebook group. They saw the caliber of the conversation. They saw how sticky it was. That community engagement heavily drove the acquisition thesis."
-    </div>
-    <div class="anecdote-author">
-      <div class="fb-avatar" style="width:64px;height:64px;font-size:24px;background:#1e1b4b">SP</div>
-      <div class="author-info">
-        <strong>Sam Parr</strong>
-        <span>Founder, The Hustle (Acquired by HubSpot for $27M+)</span>
-      </div>
-    </div>
-  </div>
-  
-  <div class="wrap text-center" style="margin-top:60px">
-    <p class="lead" style="max-width:800px;margin:0 auto">Community is not just a marketing channel. Look at Notion, Figma, and Salesforce (Trailblazers). A thriving user community is a defensible moat that increases enterprise valuation. Your code can be copied; your community cannot.</p>
-  </div>
-</section>
-
-<section id="roi" class="sec" style="background:var(--bg-off);border-top:1px solid var(--border)">
-  <div class="wrap-narrow">
+  <div class="wrap-narrow fade-in">
     <div class="text-center">
       <span class="eyebrow">Transparent Economics</span>
-      <h2 class="d2">The $1,997/mo Math</h2>
-      <p class="lead" style="margin-bottom:40px">Our done-for-you architecture, daily moderation, content seeding, and DM pipeline generation costs <strong>$1,997 per month</strong>. The required conversions to achieve massive ROI are negligible.</p>
+      <h2 class="d2">The $1,997/mo ROI Math</h2>
+      <p class="lead" style="margin-bottom:60px">Our done-for-you architecture, daily moderation, content seeding, and DM pipeline generation costs <strong>$1,997 per month</strong>. When mapped against B2B SaaS Lifetime Value (LTV), the required conversions to achieve massive ROI are negligible.</p>
     </div>
     
     <table class="roi-table">
@@ -337,79 +298,55 @@ nav{background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);position:sticky
       </thead>
       <tbody>
         <tr>
-          <td><strong>High-Volume / PLG</strong><br><span style="font-size:13px;color:var(--text-body)">e.g., $100/mo subscription</span></td>
-          <td>$1,200</td>
+          <td><strong>High-Volume / PLG Tool</strong><br><span style="font-size:13px;color:var(--text-muted)">e.g., $100/mo subscription</span></td>
+          <td style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:18px">$1,200</td>
           <td><span class="roi-highlight">1.6 deals / mo</span></td>
-          <td style="color:#10b981;font-weight:700">600%</td>
+          <td style="color:#10b981;font-weight:800;font-size:18px">600%</td>
         </tr>
         <tr>
-          <td><strong>Mid-Market Tool</strong><br><span style="font-size:13px;color:var(--text-body)">e.g., $500/mo platform</span></td>
-          <td>$6,000</td>
+          <td><strong>Mid-Market Platform</strong><br><span style="font-size:13px;color:var(--text-muted)">e.g., $500/mo subscription</span></td>
+          <td style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:18px">$6,000</td>
           <td><span class="roi-highlight">0.3 deals / mo</span></td>
-          <td style="color:#10b981;font-weight:700">3,000%</td>
+          <td style="color:#10b981;font-weight:800;font-size:18px">3,000%</td>
         </tr>
         <tr>
-          <td><strong>Enterprise / Network</strong><br><span style="font-size:13px;color:var(--text-body)">e.g., Core infrastructural tech</span></td>
-          <td>$30,000+</td>
+          <td><strong>Enterprise Solutions</strong><br><span style="font-size:13px;color:var(--text-muted)">e.g., Core infrastructural tech</span></td>
+          <td style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:18px">$30,000+</td>
           <td><span class="roi-highlight">1 deal every 1.2 years</span></td>
-          <td style="color:#10b981;font-weight:700">15,000%+</td>
+          <td style="color:#10b981;font-weight:800;font-size:18px">15,000%+</td>
         </tr>
       </tbody>
     </table>
     
     <div style="margin-top:60px;text-align:center">
-      <button class="btn btn-primary" onclick="openModal()" style="font-size:18px;padding:20px 40px">Read The Full Tactical Playbook</button>
+      <button class="btn btn-primary" onclick="openModal()" style="font-size:18px;padding:20px 40px">Download The Operations Documentation</button>
     </div>
   </div>
 </section>
 
-<footer style="background:#0f172a;color:#94a3b8;padding:40px 0;text-align:center">
-  <div class="wrap">
-    <div class="logo" style="justify-content:center;color:#fff;margin-bottom:16px">
-      <div class="logo-icon" style="width:24px;height:24px;font-size:12px">f</div> Facebook Groups OS
-    </div>
-    <p>© 2026 Facebook Groups OS. All rights reserved.</p>
-  </div>
-</footer>
-
 <script>
-  function openModal() {
-    document.getElementById('leadModal').classList.add('active');
-  }
-  function closeModal() {
-    document.getElementById('leadModal').classList.remove('active');
-  }
-  
-  // Close modal when clicking outside
-  document.getElementById('leadModal').addEventListener('click', function(e) {
-    if (e.target === this) { closeModal(); }
-  });
+  // Intersection Observer for scroll fade-ins
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+  // Modal Logic
+  function openModal() { document.getElementById('leadModal').classList.add('active'); }
+  function closeModal() { document.getElementById('leadModal').classList.remove('active'); }
+  document.getElementById('leadModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
 
   async function submitForm(e, isHero = false) {
     e.preventDefault();
-    
-    const emailInput = isHero ? document.getElementById('heroEmail') : document.getElementById('modalEmail');
     const btn = isHero ? document.getElementById('heroBtn') : document.getElementById('modalBtn');
-    
-    const email = emailInput.value.trim();
-    if(!email) return;
-    
-    btn.textContent = 'Sending...';
+    btn.textContent = 'Authenticating...';
     btn.disabled = true;
-
-    // Optional: If you want to keep the Netlify function for email collection
-    try {
-      await fetch('/.netlify/functions/subscribe', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ email })
-      });
-    } catch(err) {
-      console.error('Fetch error:', err);
-    }
-
-    // Route to the tactical playbook page
-    window.location.href = '/playbook-download.html';
+    setTimeout(() => { window.location.href = '/playbook-download.html'; }, 800);
   }
 </script>
 
