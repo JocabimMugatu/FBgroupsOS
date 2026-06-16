@@ -3,44 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Tactical Playbook | Facebook Groups OS</title>
-<meta name="description" content="The exact step-by-step blueprint we use to incubate high-intent SaaS leads in Facebook groups.">
+<title>The Tactical Blueprint | Facebook Groups OS</title>
+<meta name="description" content="The exact step-by-step blueprint we use to incubate high-intent SaaS leads.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',sans-serif;background:#f8fafc;color:#0f172a;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',sans-serif;background:#f8fafc;color:#0f172a;-webkit-font-smoothing:antialiased;line-height:1.7}
 a{color:inherit;text-decoration:none}
 :root{--brand:#4f46e5;--brand-light:#e0e7ff;--text-dark:#0f172a;--text-body:#475569;--bg-white:#ffffff;--border:#e2e8f0}
 
-nav{background:#fff;border-bottom:1px solid var(--border);padding:20px 24px}
-.nav-inner{max-width:860px;margin:0 auto;font-family:'Plus Jakarta Sans';font-weight:800;font-size:18px;display:flex;align-items:center;gap:8px;color:var(--text-dark)}
-.logo-icon{width:24px;height:24px;background:var(--brand);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px}
+nav{background:#fff;border-bottom:1px solid var(--border);padding:20px 24px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:900px;margin:0 auto;font-family:'Plus Jakarta Sans';font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:space-between;color:var(--text-dark)}
+.logo-icon{width:28px;height:28px;background:var(--brand);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+.apply-btn{background:var(--brand);color:#fff;padding:10px 20px;border-radius:6px;font-size:14px;font-family:'Inter';font-weight:600}
 
-.wrap{max-width:860px;margin:0 auto;padding:60px 24px}
-.pb-header{text-align:center;margin-bottom:60px}
-.pb-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(32px,5vw,48px);font-weight:800;color:var(--text-dark);line-height:1.1;margin-bottom:16px;letter-spacing:-.02em}
-.pb-sub{font-size:18px;color:var(--text-body);max-width:650px;margin:0 auto;line-height:1.6}
+.wrap{max-width:900px;margin:0 auto;padding:80px 24px}
+.header-area{margin-bottom:60px;border-bottom:2px solid var(--border);padding-bottom:40px}
+.tag{background:var(--text-dark);color:#fff;padding:6px 12px;border-radius:4px;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;display:inline-block;margin-bottom:24px}
+h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(36px,5vw,56px);font-weight:800;color:var(--text-dark);line-height:1.1;margin-bottom:24px;letter-spacing:-0.02em}
+.subhead{font-size:20px;color:var(--text-body);font-weight:400}
 
-/* Tactical Steps */
-.step-container{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;padding:48px;margin-bottom:40px;box-shadow:0 4px 6px -1px rgb(0 0 0 / 0.05)}
-.step-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--border)}
-.step-num{width:48px;height:48px;background:var(--brand-light);color:var(--brand);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;flex-shrink:0}
-.step-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:700;color:var(--text-dark)}
+/* Document Body Styling */
+.doc-section{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;padding:60px;margin-bottom:40px;box-shadow:0 4px 6px -1px rgb(0 0 0 / 0.05)}
+.phase-label{color:var(--brand);font-weight:700;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;display:block}
+h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:32px;font-weight:800;margin-bottom:24px;border-bottom:1px solid var(--border);padding-bottom:16px}
+h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;margin:32px 0 16px;color:var(--text-dark)}
+p{margin-bottom:24px;color:var(--text-body);font-size:17px}
+ul, ol{margin-bottom:24px;padding-left:24px;color:var(--text-body);font-size:17px}
+li{margin-bottom:12px}
+strong{color:var(--text-dark)}
 
-.step-body p{color:var(--text-body);line-height:1.7;margin-bottom:20px;font-size:16px}
-.step-body h4{font-family:'Plus Jakarta Sans';font-size:16px;margin:24px 0 12px;color:var(--text-dark)}
+/* Callout Boxes */
+.callout{background:var(--brand-light);border-left:4px solid var(--brand);padding:24px;border-radius:0 8px 8px 0;margin:32px 0}
+.callout-title{font-weight:700;color:var(--brand);margin-bottom:8px;font-size:14px;text-transform:uppercase;letter-spacing:0.05em}
 
 /* Code / Script Block */
-.script-block{background:#0f172a;color:#e2e8f0;padding:24px;border-radius:12px;font-family:monospace;font-size:14px;line-height:1.6;margin:20px 0;border-left:4px solid var(--brand)}
-.script-highlight{color:#818cf8;font-weight:bold}
+.script-block{background:#0f172a;color:#e2e8f0;padding:32px;border-radius:12px;font-family:'JetBrains Mono', monospace;font-size:15px;line-height:1.7;margin:32px 0;box-shadow:inset 0 2px 4px rgba(0,0,0,0.5)}
+.script-highlight{color:#818cf8;font-weight:bold;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:8px;margin-top:24px}
+.script-highlight:first-child{margin-top:0}
 
-.pb-cta{text-align:center;margin-top:60px;padding:48px;background:var(--bg-white);border:1px solid var(--border);border-radius:16px;box-shadow:0 10px 25px -5px rgba(79,70,229,0.1)}
-.pb-cta h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;color:var(--text-dark);margin-bottom:16px}
-.pb-cta p{color:var(--text-body);margin-bottom:32px;font-size:18px}
-.btn{display:inline-flex;padding:16px 36px;background:var(--brand);color:#fff;font-weight:600;border-radius:8px;transition:0.2s;font-size:16px}
-.btn:hover{background:#4338ca;transform:translateY(-2px)}
+/* CTA Footer */
+.final-cta{background:var(--text-dark);color:#fff;border-radius:24px;padding:60px;text-align:center;margin-top:80px;box-shadow:0 20px 40px rgba(0,0,0,0.2)}
+.final-cta h2{border:none;color:#fff;margin-bottom:16px;padding-bottom:0}
+.final-cta p{color:#94a3b8;font-size:18px;margin-bottom:40px}
+.btn-large{display:inline-block;background:var(--brand);color:#fff;padding:20px 40px;border-radius:8px;font-weight:600;font-size:18px;transition:0.2s}
+.btn-large:hover{background:#4338ca;transform:translateY(-2px)}
 </style>
 </head>
 <body>
@@ -51,86 +60,87 @@ nav{background:#fff;border-bottom:1px solid var(--border);padding:20px 24px}
       <div class="logo-icon">f</div>
       Facebook Groups OS
     </a>
+    <a href="mailto:your-email@example.com" class="apply-btn">Apply For Agency Setup</a>
   </div>
 </nav>
 
 <div class="wrap">
-  <div class="pb-header">
-    <h1 class="pb-title">The SaaS Incubation Playbook</h1>
-    <p class="pb-sub">This is the exact operational framework we use to execute our $1,997/mo management service. It takes 30 days to build the foundation, and scales infinitely.</p>
+  <div class="header-area">
+    <div class="tag">Internal Operations Document</div>
+    <h1>The SaaS Incubation Blueprint</h1>
+    <p class="subhead">This is the exact, unredacted framework we use to execute our $1,997/mo management service. It takes 30 days to build the foundation, and scales infinitely.</p>
   </div>
 
-  <div class="step-container">
-    <div class="step-header">
-      <div class="step-num">01</div>
-      <div class="step-title">The "Honeypot" Naming Strategy</div>
+  <div class="doc-section">
+    <span class="phase-label">Phase 1: Architecture</span>
+    <h2>The "Honeypot" Naming Strategy</h2>
+    <p>The biggest mistake SaaS founders make is naming their community after their product. Nobody wakes up and searches Facebook for "Viktor Official Users Group" unless they are already a paying customer needing support.</p>
+    <p>You must optimize for Facebook's internal SEO engine by targeting the <strong>pain points, identities, and macro-goals</strong> of your Ideal Customer Profile (ICP).</p>
+    
+    <h3>The Naming Formula:</h3>
+    <div class="callout" style="background:#f1f5f9;border-color:#94a3b8;color:#0f172a;font-family:'JetBrains Mono', monospace">
+      [Identity / Profession] + [Macro Goal] - [Specific Pain Point/Strategy]
     </div>
-    <div class="step-body">
-      <p>We do not name the group after your software. If you sell Viktor, the group is not called "Viktor Users." We optimize for Facebook's internal SEO engine by targeting the exact pain points and identities of your ICP.</p>
-      <h4>Good vs. Bad Group Names:</h4>
-      <ul style="color:var(--text-body);line-height:1.7;padding-left:20px">
-        <li><span style="color:#ef4444">❌ Bad:</span> "Viktor Official Community" (Zero organic search volume)</li>
-        <li><span style="color:#10b981">✅ Good:</span> "B2B Founders & GTM Strategies - Cold Email & Outbound Hacks"</li>
-      </ul>
-      <p style="margin-top:20px">By naming it around the solution, you capture founders who are actively searching for ways to fix their outbound flows. They enter with high intent.</p>
-    </div>
+    
+    <ul>
+      <li><strong style="color:#ef4444">❌ Bad:</strong> Acme CRM Community</li>
+      <li><strong style="color:#10b981">✅ Good (For Outbound SaaS):</strong> B2B Founders & GTM Strategies - Cold Email & Outbound Hacks</li>
+      <li><strong style="color:#10b981">✅ Good (For Local Marketing SaaS):</strong> Roofing Business Owners - Scaling Past $1M ARR</li>
+    </ul>
+    <p>By naming it around the solution, you capture founders who are actively searching for ways to fix their bottlenecks. They enter your funnel with high intent, completely unaware they are entering a branded ecosystem.</p>
   </div>
 
-  <div class="step-container">
-    <div class="step-header">
-      <div class="step-num">02</div>
-      <div class="step-title">The 4-1-1 Content Cadence</div>
-    </div>
-    <div class="step-body">
-      <p>A dead group yields zero leads. As your managers, we execute the 4-1-1 posting rhythm weekly to ensure the feed remains hyper-active and educational, demonstrating your complex use-cases over time.</p>
-      <ul style="color:var(--text-body);line-height:1.7;padding-left:20px">
-        <li><strong>4 Value Posts:</strong> Deep-dive teardowns, workflows, and industry news. No pitching. (e.g., "Here is how we scraped X leads using Y methodology.")</li>
-        <li><strong>1 Engagement Post:</strong> A poll or controversial hot-take designed solely to trigger the Facebook algorithm and push the group to the top of members' feeds.</li>
-        <li><strong>1 Soft Pitch/Offer:</strong> A direct call to action disguised as a value-add. (e.g., "Giving away 5 onboarding audits for our software. Drop a comment.")</li>
-      </ul>
-    </div>
+  <div class="doc-section">
+    <span class="phase-label">Phase 2: Content Incubation</span>
+    <h2>The 4-1-1 Content Matrix</h2>
+    <p>A dead group yields zero leads. If the group is just a dumping ground for your blog posts, members will turn off notifications. We execute the <strong>4-1-1 posting rhythm</strong> weekly to ensure the feed remains hyper-active, highly educational, and constantly trains the Facebook algorithm to push your posts to the top of members' feeds.</p>
+    
+    <h3>The Weekly Breakdown:</h3>
+    <ul>
+      <li><strong>4 Value Posts (The Incubation):</strong> Deep-dive teardowns, workflows, and industry news. Absolutely no pitching. Example: <em>"Here is the exact API node tree we used to scrape 4k local leads. [Attach Screenshot]"</em>. This proves your extreme competence.</li>
+      <li><strong>1 Engagement Post (The Algorithm Trigger):</strong> A poll, a controversial hot-take, or a simple question designed solely to get comments. Facebook's algorithm rewards groups with high comment velocity. Example: <em>"Unpopular opinion: Cold calling is dead in 2026. Agree or disagree?"</em></li>
+      <li><strong>1 Soft Pitch/Offer (The Harvest):</strong> A direct call to action disguised as a value-add. This must feel exclusive to the group. Example: <em>"Giving away 5 free onboarding setups this week for members of this group only. Drop a comment to claim."</em></li>
+    </ul>
   </div>
 
-  <div class="step-container">
-    <div class="step-header">
-      <div class="step-num">03</div>
-      <div class="step-title">The DM Handoff Framework</div>
+  <div class="doc-section">
+    <span class="phase-label">Phase 3: Pipeline Generation</span>
+    <h2>The DM Qualification Script</h2>
+    <p>This is where the actual pipeline is generated. When a founder comments on a high-value workflow post, <strong>do not drop a generic calendar link in the public comments.</strong> That is lazy and kills conversions.</p>
+    <p>You must transition the public comment into a private Direct Message to qualify them. Here is our exact, word-for-word conversational flow:</p>
+    
+    <div class="script-block">
+      <span class="script-highlight">Step 1: Context & Opener</span>
+      "Hey {First Name}, saw your comment on the GTM workflow post. Glad the data enrichment part resonated! Are you currently running outbound for {Company Name} or just researching right now?"
+      
+      <span class="script-highlight">Step 2: Identify The Gap (If they reply yes)</span>
+      "Nice. Usually founders hitting that specific scale run into {Insert Common Pain Point your software solves}. Is that slowing you guys down right now?"
+      
+      <span class="script-highlight">Step 3: The Native Handoff</span>
+      "Totally get that. That exact bottleneck is actually why we built {Your Software}. We automated that entire manual process.<br><br>I'm actually putting together a quick 10-min mapping session for a few founders in the group this week to show them how it works. Want me to send over a link to block out a time with our team?"
     </div>
-    <div class="step-body">
-      <p>This is where the pipeline is generated. When a founder comments on a high-value workflow post, we do not drop a generic calendar link in the public comments. We transition them to a private Direct Message to qualify them.</p>
-      <h4>Our Exact DM Script Structure:</h4>
-      <div class="script-block">
-        <span class="script-highlight">[Initial Outreach]</span><br>
-        Hey {First Name}, saw your comment on the GTM workflow post. Glad it resonated! Are you currently running outbound for {Company Name}?<br><br>
-        
-        <span class="script-highlight">[Identify Gap]</span><br>
-        Nice. Usually founders hitting that scale run into {Common Pain Point}. Is that slowing you down right now?<br><br>
-        
-        <span class="script-highlight">[The Handoff]</span><br>
-        Totally. That exact bottleneck is why we built {Your Software}. I'm actually putting together a quick 10-min mapping session for a few founders in the group this week. Want me to send over a link to block out a time with our AE?
-      </div>
-    </div>
-  </div>
-
-  <div class="step-container">
-    <div class="step-header">
-      <div class="step-num">04</div>
-      <div class="step-title">Moderation & Spam Defense</div>
-    </div>
-    <div class="step-body">
-      <p>The enterprise value of a community drops to zero the moment it looks like a billboard. We aggressively manage the gate.</p>
-      <ul style="color:var(--text-body);line-height:1.7;padding-left:20px">
-        <li><strong>Strict Entry Questions:</strong> We require company URLs and LinkedIn profiles for entry. We reject competitors and low-tier accounts.</li>
-        <li><strong>Zero-Tolerance Pitching:</strong> Anyone caught sending cold DMs to other members or pitching competing services is instantly banned.</li>
-        <li><strong>Curated Evangelism:</strong> We actively identify your "superfans" and pin their success stories to the top of the group.</li>
-      </ul>
+    
+    <div class="callout">
+      <div class="callout-title">Why this works</div>
+      By the time they get on the calendar with your Account Executive, they have consumed your authoritative content, had a personalized 1-on-1 interaction, and admitted to a pain point. <strong>Close rates on these leads are often 40%+ higher than cold outbound.</strong>
     </div>
   </div>
 
-  <div class="pb-cta">
+  <div class="doc-section">
+    <span class="phase-label">Phase 4: Ecosystem Defense</span>
+    <h2>Moderation & Gatekeeping</h2>
+    <p>The enterprise value of a community drops to zero the moment it looks like a billboard. You must aggressively manage the gate.</p>
+    <ul>
+      <li><strong>Strict Entry Questions:</strong> We require company URLs and LinkedIn profiles for entry. If they do not fill them out, they are denied. We actively reject competitors.</li>
+      <li><strong>Zero-Tolerance Pitching:</strong> Anyone caught sending cold DMs to other members or pitching competing services in the comments is instantly banned without warning.</li>
+      <li><strong>Curated Evangelism:</strong> When your existing customers share a win in the group, we pin it to the "Featured" section. Organic social proof from a peer is 100x more effective than your own ad copy.</li>
+    </ul>
+  </div>
+
+  <div class="final-cta">
     <h2>Ready to deploy this engine?</h2>
-    <p>Let us handle the strategy, moderation, and pipeline generation. You just close the deals.</p>
-    <a href="mailto:your-email@example.com" class="btn">Apply For Partnership - $1,997/mo</a>
+    <p>You can spend 20 hours a week attempting to build and moderate this yourself, or you can hire us to build the moat while you close the deals.</p>
+    <a href="mailto:your-email@example.com" class="btn-large">Apply For Partnership - $1,997/mo</a>
   </div>
 </div>
 
