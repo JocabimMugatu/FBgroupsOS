@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Facebook Groups OS | High-Touch Pipeline for B2B SaaS</title>
-<meta name="description" content="We build and manage high-intent Facebook communities for B2B SaaS. Scale your touchpoints, educate your ICP, and build evangelists.">
+<title>Facebook Groups OS | High-Touch Pipeline for B2B Tech</title>
+<meta name="description" content="We build and manage high-intent Facebook communities for B2B SaaS. Scale your touchpoints, educate your ICP, and build defensible moats.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%234f46e5%22/><text x=%2250%22 y=%2270%22 font-family=%22Arial%22 font-size=%2265%22 font-weight=%22bold%22 fill=%22white%22 text-anchor=%22middle%22>f</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,20 +21,24 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
 
 /* Typography */
 h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text-dark);letter-spacing:-0.02em}
-.d1{font-weight:800;font-size:clamp(40px,5vw,64px);line-height:1.05;margin-bottom:24px}
-.d2{font-weight:800;font-size:clamp(32px,4vw,44px);line-height:1.1;margin-bottom:20px}
+.d1{font-weight:800;font-size:clamp(40px,5vw,68px);line-height:1.05;margin-bottom:24px}
+.d2{font-weight:800;font-size:clamp(32px,4vw,48px);line-height:1.1;margin-bottom:20px}
+.d3{font-weight:800;font-size:clamp(24px,3vw,32px);line-height:1.2;margin-bottom:16px}
 .lead{font-size:18px;line-height:1.7;color:var(--text-body)}
 .eyebrow{font-size:13px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand);margin-bottom:16px;display:inline-block}
 
-/* Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 32px;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;border-radius:8px;transition:all 0.2s;cursor:pointer;white-space:nowrap}
+/* Buttons & Inputs */
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 32px;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;border-radius:8px;transition:all 0.2s;cursor:pointer;white-space:nowrap;border:none}
 .btn-primary{background:var(--brand);color:#fff;box-shadow:0 4px 14px rgba(79,70,229,0.3)}
 .btn-primary:hover{background:var(--brand-hover);transform:translateY(-2px)}
 .btn-outline{background:transparent;color:var(--text-dark);border:1px solid #cbd5e1}
 .btn-outline:hover{background:#f8fafc;border-color:#94a3b8}
+input[type="email"], input[type="text"] {width:100%;padding:16px;border:1px solid var(--border);border-radius:8px;font-size:16px;font-family:'Inter';margin-bottom:16px;outline:none;transition:border 0.2s}
+input[type="email"]:focus, input[type="text"]:focus {border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-light)}
 
 /* Layout */
 .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.wrap-narrow{max-width:900px;margin:0 auto;padding:0 24px}
 .sec{padding:100px 0}
 .text-center{text-align:center}
 
@@ -44,13 +48,21 @@ nav{background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);position:sticky
 .logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;display:flex;align-items:center;gap:8px}
 .logo-icon{width:32px;height:32px;background:var(--brand);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px}
 
+/* Modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,0.8);backdrop-filter:blur(4px);z-index:1000;display:none;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s}
+.modal-overlay.active{display:flex;opacity:1}
+.modal-content{background:#fff;border-radius:16px;padding:48px;max-width:500px;width:90%;position:relative;box-shadow:var(--shadow-lg)}
+.modal-close{position:absolute;top:20px;right:20px;font-size:24px;cursor:pointer;color:var(--text-body);background:none;border:none}
+
 /* Hero Section */
 .hero{position:relative;padding:80px 0 100px;background:linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center}
 .hero-badge{display:inline-flex;padding:6px 16px;background:var(--brand-light);color:var(--brand);border-radius:100px;font-size:13px;font-weight:600;margin-bottom:24px}
-.hero-btns{display:flex;gap:16px;margin-top:40px}
+.hero-capture{background:#fff;border:1px solid var(--border);padding:8px;border-radius:12px;display:flex;gap:8px;margin-top:40px;box-shadow:var(--shadow-sm);max-width:480px}
+.hero-capture input{margin-bottom:0;border:none;background:transparent;flex-grow:1;padding:12px 16px}
+.hero-capture input:focus{box-shadow:none}
 
-/* Clear FB Feed Mockup (No Overlap) */
+/* Clear FB Feed Mockup */
 .feed-container{background:#f0f2f5;border-radius:16px;border:1px solid var(--border);padding:20px;height:650px;overflow-y:auto;box-shadow:var(--shadow-lg)}
 .feed-header{font-family:'Plus Jakarta Sans';font-weight:700;font-size:18px;margin-bottom:20px;color:#1c1e21;display:flex;align-items:center;justify-content:space-between}
 .fb-post{background:#fff;border-radius:8px;padding:16px;margin-bottom:20px;box-shadow:var(--shadow-sm);border:1px solid #e5e7eb}
@@ -61,21 +73,37 @@ nav{background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);position:sticky
 .fb-time{font-size:12px;color:#65676b}
 .fb-content{font-size:15px;color:#050505;line-height:1.5;margin-bottom:12px}
 .fb-stats{display:flex;justify-content:space-between;font-size:13px;color:#65676b;padding-bottom:12px;border-bottom:1px solid #ced0d4;margin-bottom:12px}
-.fb-actions{display:flex;gap:20px;font-weight:600;color:#65676b;font-size:13px}
 .highlight-post{border-left:4px solid var(--brand)}
 
-/* Problem Grid Pivot */
+/* The SaaS Problem Section */
 .prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:60px}
 .prob-card{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;padding:40px 32px;box-shadow:var(--shadow-sm)}
 .prob-icon{width:48px;height:48px;background:var(--brand-light);color:var(--brand);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:20px}
-.prob-card h3{font-size:20px;margin-bottom:12px}
+
+/* Anecdote Section */
+.anecdote{background:#0f172a;color:#fff;border-radius:24px;padding:80px 60px;margin:100px 0;position:relative;overflow:hidden;box-shadow:0 25px 50px -12px rgba(79,70,229,0.3)}
+.anecdote-bg{position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle, rgba(79,70,229,0.3) 0%, transparent 70%);border-radius:50%}
+.quote-mark{font-family:'Times New Roman',serif;font-size:180px;color:rgba(255,255,255,0.05);position:absolute;top:-40px;left:20px;line-height:1}
+.anecdote-content{position:relative;z-index:1;font-size:24px;font-weight:500;line-height:1.6;font-style:italic;max-width:900px}
+.anecdote-author{margin-top:40px;display:flex;align-items:center;gap:20px}
+.author-info strong{display:block;font-size:18px}
+.author-info span{font-size:14px;color:#94a3b8;font-style:normal;margin-top:4px}
+
+/* Use Cases Section */
+.use-case-row{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:100px}
+.use-case-row:nth-child(even){direction:rtl}
+.use-case-row:nth-child(even) > * {direction:ltr}
+.uc-img{background:#f1f5f9;border-radius:16px;padding:40px;border:1px solid var(--border);position:relative}
+.uc-tag{position:absolute;top:-15px;left:40px;background:var(--brand);color:#fff;padding:6px 16px;border-radius:100px;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase}
+.uc-list{margin-top:24px;list-style:none}
+.uc-list li{margin-bottom:16px;display:flex;gap:12px;color:var(--text-body);font-size:16px}
+.uc-list li::before{content:'✓';color:var(--brand);font-weight:bold}
 
 /* Pricing / ROI Table */
-.roi-table{width:100%;border-collapse:collapse;margin-top:40px;background:var(--bg-white);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-md)}
-.roi-table th, .roi-table td{padding:20px;text-align:left;border-bottom:1px solid var(--border)}
-.roi-table th{background:#f8fafc;font-family:'Plus Jakarta Sans';font-weight:700;color:var(--text-dark)}
-.roi-table tr:last-child td{border-bottom:none}
-.roi-highlight{background:var(--brand-light);color:var(--brand);font-weight:700;border-radius:8px;padding:4px 8px;display:inline-block}
+.roi-table{width:100%;border-collapse:collapse;margin-top:60px;background:var(--bg-white);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-md)}
+.roi-table th, .roi-table td{padding:24px;text-align:left;border-bottom:1px solid var(--border)}
+.roi-table th{background:#f8fafc;font-family:'Plus Jakarta Sans';font-weight:700;color:var(--text-dark);font-size:15px;text-transform:uppercase;letter-spacing:0.05em}
+.roi-highlight{background:var(--brand-light);color:var(--brand);font-weight:700;border-radius:8px;padding:6px 12px;display:inline-block}
 
 /* Highlight Text */
 .hl{color:var(--brand)}
@@ -90,20 +118,39 @@ nav{background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);position:sticky
       Facebook Groups OS
     </div>
     <div>
-      <a href="/playbook-download.html" class="btn btn-outline" style="margin-right:12px">Read The Playbook</a>
-      <a href="#roi" class="btn btn-primary">See Pricing & Math</a>
+      <button class="btn btn-primary" onclick="openModal()">Get The Playbook</button>
     </div>
   </div>
 </nav>
 
+<div class="modal-overlay" id="leadModal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="logo-icon" style="margin-bottom:20px;width:48px;height:48px;font-size:24px">f</div>
+    <h3 class="d3">Get The Tactical Playbook</h3>
+    <p class="lead" style="margin-bottom:32px;font-size:15px">Download the exact frameworks, content cadences, and DM scripts we use to incubate B2B SaaS pipeline.</p>
+    <form onsubmit="submitForm(event)">
+      <input type="text" id="modalName" placeholder="First Name" required>
+      <input type="email" id="modalEmail" placeholder="Work Email" required>
+      <button type="submit" class="btn btn-primary" style="width:100%" id="modalBtn">Send Me The Playbook</button>
+    </form>
+    <p style="font-size:12px;color:#94a3b8;margin-top:16px;text-align:center">We don't spam. Unsubscribe anytime.</p>
+  </div>
+</div>
+
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="hero-badge">High-Touch Pipeline Incubation</div>
+      <div class="hero-badge">The Owned Attention Playbook</div>
       <h1 class="d1">Ads buy clicks.<br>Communities build <span class="hl">evangelists.</span></h1>
-      <p class="lead">Complex SaaS products require high-touch education. A fleeting ad scroll isn't enough. We build fully-managed Facebook groups to repeatedly demonstrate your value, educate your ICP, and dramatically increase LTV.</p>
-      <div class="hero-btns">
-        <a href="#how-it-works" class="btn btn-primary">See The Incubation Loop</a>
+      <p class="lead">Complex SaaS products require high-touch education. A fleeting ad scroll isn't enough. We build fully-managed Facebook groups to repeatedly demonstrate your value, educate your ICP, and systematically convert trust into booked meetings.</p>
+      
+      <form class="hero-capture" onsubmit="submitForm(event, true)">
+        <input type="email" id="heroEmail" placeholder="Enter your work email..." required>
+        <button type="submit" class="btn btn-primary" style="padding:12px 24px" id="heroBtn">Get Playbook</button>
+      </form>
+      <div style="font-size:13px;color:#94a3b8;margin-top:12px;display:flex;align-items:center;gap:8px">
+        <span style="color:#10b981">★ ★ ★ ★ ★</span> Used by 100+ B2B Founders
       </div>
     </div>
 
@@ -122,7 +169,6 @@ nav{background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);position:sticky
           Is anyone else finding cold outbound completely dead right now? We are getting killed on meeting show rates. Need a new workflow.
         </div>
         <div class="fb-stats"><span>45 Likes</span><span>22 Comments</span></div>
-        <div class="fb-actions"><span>👍 Like</span><span>💬 Comment</span></div>
       </div>
 
       <div class="fb-post highlight-post">
@@ -135,7 +181,7 @@ nav{background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);position:sticky
         </div>
         <div class="fb-content">
           <strong>The exact playbook we use to double show rates:</strong><br><br>
-          We stopped sending generic cadences. Instead, we pull hyper-specific local data for every prospect and embed it natively. Here is a 3-minute video showing the exact Viktor workflow we use to automate this...
+          We stopped sending generic cadences. Instead, we pull hyper-specific local data for every prospect and embed it natively. Here is a 3-minute video showing the exact workflow we use to automate this...
           <div style="margin-top:12px;background:#e5e7eb;height:140px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#65676b">▶ Play Video Demo</div>
         </div>
         <div class="fb-stats"><span>112 Likes</span><span>38 Comments</span></div>
@@ -150,7 +196,7 @@ nav{background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);position:sticky
           </div>
         </div>
         <div class="fb-content">
-          Hey Founders! Since the workflow video yesterday blew up, I'm giving away <strong>3 free lifetime Viktor licenses</strong> to bootstrapped founders in this group so you can run it yourself. Drop your startup link below to enter 👇
+          Hey Founders! Since the workflow video yesterday blew up, I'm giving away <strong>3 free lifetime software licenses</strong> to bootstrapped founders in this group so you can run it yourself. Drop your startup link below to enter 👇
         </div>
         <div class="fb-stats"><span style="color:var(--brand);font-weight:600">❤️ 204 Likes</span><span>89 Comments</span></div>
       </div>
@@ -159,39 +205,125 @@ nav{background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);position:sticky
 </section>
 
 <section class="sec" style="background:var(--bg-white)">
-  <div class="wrap">
-    <div class="text-center">
-      <span class="eyebrow">The High-Touch Deficit</span>
-      <h2 class="d2">Ads are transactional. SaaS is a relationship.</h2>
-      <p class="lead" style="max-width:700px;margin:0 auto">You can buy your way to the top of the feed, but well-funded startups face a different problem: proving complex value over time. Community solves this.</p>
-    </div>
+  <div class="wrap text-center">
+    <span class="eyebrow">The High-Touch Deficit</span>
+    <h2 class="d2">Ads are transactional. SaaS is a relationship.</h2>
+    <p class="lead" style="max-width:800px;margin:0 auto">You can buy your way to the top of the feed, but well-funded tech companies face a different problem: proving complex value over time. If your product requires education to sell, you need an incubation engine.</p>
     
-    <div class="prob-grid">
+    <div class="prob-grid text-left" style="text-align:left">
       <div class="prob-card">
         <div class="prob-icon">👀</div>
-        <h3>The "Single Touch" Fallacy</h3>
-        <p class="lead" style="font-size:15px">B2B buyers require 7-13 touches before trusting a software vendor. Trying to force a complex workflow demo into a single Meta ad click skyrockets your CAC and yields low-intent leads.</p>
+        <h3 class="d3" style="font-size:20px">The "Single Touch" Fallacy</h3>
+        <p class="lead" style="font-size:15px">B2B buyers require 7-13 touches before trusting a vendor. Forcing a complex demo into a single Meta ad click skyrockets your CAC and yields low-intent, easily-churned leads.</p>
       </div>
       <div class="prob-card">
         <div class="prob-icon">🧩</div>
-        <h3>Demonstrating Varying Use-Cases</h3>
+        <h3 class="d3" style="font-size:20px">Demonstrating Varying Use-Cases</h3>
         <p class="lead" style="font-size:15px">A static landing page can't speak to every niche. A Facebook group allows you to incubate leads by showing them micro-playbooks tailored exactly to their industry over several weeks.</p>
       </div>
       <div class="prob-card">
         <div class="prob-icon">🛡️</div>
-        <h3>Combating Churn</h3>
-        <p class="lead" style="font-size:15px">Community members stick around. By nurturing an environment where users help each other troubleshoot and share wins, your software becomes an integrated ecosystem, drastically raising LTV.</p>
+        <h3 class="d3" style="font-size:20px">The Ultimate Churn Defense</h3>
+        <p class="lead" style="font-size:15px">By nurturing an environment where users help each other troubleshoot and share wins, your software transcends being just a "tool." It becomes an integrated ecosystem, drastically raising LTV.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="roi" class="sec" style="background:var(--bg-off);border-top:1px solid var(--border)">
+<section class="sec" style="background:var(--bg-off)">
   <div class="wrap">
+    <div class="text-center" style="margin-bottom:80px">
+      <span class="eyebrow">Proven Frameworks</span>
+      <h2 class="d2">One methodology. Any tech vertical.</h2>
+      <p class="lead" style="max-width:700px;margin:0 auto">Whether you are selling a robust enterprise automation suite or a PLG networking tool, the architecture of owned-attention remains the same.</p>
+    </div>
+
+    <div class="use-case-row">
+      <div class="uc-img">
+        <div class="uc-tag">Use Case 1: High-Touch Automation</div>
+        <div class="fb-post" style="margin-bottom:0;box-shadow:var(--shadow-md)">
+          <div class="fb-user"><div class="fb-avatar" style="background:var(--brand)">KN</div><div><div class="fb-name">Group Admin</div></div></div>
+          <div class="fb-content"><strong>Case Study:</strong> How a local agency scraped 4,000 hyper-niche leads and booked 12 meetings in 48 hours using the new data-enrichment node. Here is the exact node tree architecture...</div>
+        </div>
+      </div>
+      <div>
+        <h3 class="d2" style="font-size:32px">The Complexity Solver</h3>
+        <p class="lead">For software with a steep learning curve or infinite use-cases (like Viktor, Zapier, or Make), the group acts as a live, daily webinar. You aren't pitching the software; you are giving away the recipes.</p>
+        <ul class="uc-list">
+          <li>Founders join to steal your free workflow "recipes".</li>
+          <li>They realize executing the recipe manually is too hard.</li>
+          <li>They buy your software to execute it for them.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="use-case-row">
+      <div class="uc-img">
+        <div class="uc-tag" style="background:#0f172a">Use Case 2: Professional Networks</div>
+        <div class="fb-post" style="margin-bottom:0;box-shadow:var(--shadow-md)">
+          <div class="fb-user"><div class="fb-avatar" style="background:#0f172a">SJ</div><div><div class="fb-name">Startup Founder</div></div></div>
+          <div class="fb-content">Just wanted to give a massive shoutout to this community. I posted last week about needing a fractional CMO who understands hardware, and the intro I got here literally saved our Q3.</div>
+        </div>
+      </div>
+      <div>
+        <h3 class="d2" style="font-size:32px">The Network Incubator</h3>
+        <p class="lead">For membership networks (like Boardy Pro or exclusive founder tiers), the value *is* the people. A Facebook group acts as the ultimate top-of-funnel lead magnet, simulating the premium experience.</p>
+        <ul class="uc-list">
+          <li>Create a massive free tier group built around a specific persona.</li>
+          <li>Moderate heavily to ensure high-quality discussion.</li>
+          <li>Gate the most valuable introductions and datasets behind your paid network.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="use-case-row">
+      <div class="uc-img">
+        <div class="uc-tag" style="background:#10b981">Use Case 3: Vertical SaaS</div>
+        <div class="fb-post" style="margin-bottom:0;box-shadow:var(--shadow-md)">
+          <div class="fb-user"><div class="fb-avatar" style="background:#10b981">RC</div><div><div class="fb-name">Roofing CEO</div></div></div>
+          <div class="fb-content">What is everyone using to automate their follow-ups after a storm hits? We have the leads but our sales guys are dropping the ball on the 3rd and 4th touchpoints.</div>
+        </div>
+      </div>
+      <div>
+        <h3 class="d2" style="font-size:32px">The Industry Watercooler</h3>
+        <p class="lead">If you sell software exclusively to Roofers, Dentists, or Gym Owners, you don't need a massive audience—you need a highly concentrated one. We build the "watercooler" where these operators complain about their daily operations.</p>
+        <ul class="uc-list">
+          <li>Capture organic search intent for "Roofing Business Owners".</li>
+          <li>Monitor the group for operational complaints.</li>
+          <li>Deploy your AE into the DMs the moment a pain point matches your software's solution.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg-white)">
+  <div class="wrap anecdote">
+    <div class="quote-mark">"</div>
+    <div class="anecdote-bg"></div>
+    <div class="anecdote-content">
+      "When we were negotiating the sale of The Hustle to HubSpot, the HubSpot executives were actively lurking in the Trends Facebook group. They saw the caliber of the conversation. They saw how sticky it was. That community engagement heavily drove the acquisition thesis."
+    </div>
+    <div class="anecdote-author">
+      <div class="fb-avatar" style="width:64px;height:64px;font-size:24px;background:#1e1b4b">SP</div>
+      <div class="author-info">
+        <strong>Sam Parr</strong>
+        <span>Founder, The Hustle (Acquired by HubSpot for $27M+)</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="wrap text-center" style="margin-top:60px">
+    <p class="lead" style="max-width:800px;margin:0 auto">Community is not just a marketing channel. Look at Notion, Figma, and Salesforce (Trailblazers). A thriving user community is a defensible moat that increases enterprise valuation. Your code can be copied; your community cannot.</p>
+  </div>
+</section>
+
+<section id="roi" class="sec" style="background:var(--bg-off);border-top:1px solid var(--border)">
+  <div class="wrap-narrow">
     <div class="text-center">
       <span class="eyebrow">Transparent Economics</span>
       <h2 class="d2">The $1,997/mo Math</h2>
-      <p class="lead" style="max-width:700px;margin:0 auto 40px">Our done-for-you group management costs <strong>$1,997 per month</strong>. Depending on your ACV and LTV, the required conversions to achieve massive ROI are negligible.</p>
+      <p class="lead" style="margin-bottom:40px">Our done-for-you architecture, daily moderation, content seeding, and DM pipeline generation costs <strong>$1,997 per month</strong>. The required conversions to achieve massive ROI are negligible.</p>
     </div>
     
     <table class="roi-table">
@@ -199,41 +331,87 @@ nav{background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);position:sticky
         <tr>
           <th>SaaS Scenario</th>
           <th>Annual Contract Value (ACV)</th>
-          <th>Estimated LTV (3 Years)</th>
-          <th>Deals Needed to Break Even on $1,997</th>
+          <th>Deals Needed to Break Even</th>
           <th>ROI on 10 Closed Deals / Mo</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>High-Volume / PLG Tool</strong><br><span style="font-size:13px;color:var(--text-body)">e.g., Simple automation extension</span></td>
-          <td>$1,200 <span style="font-size:13px;color:var(--text-body)">($100/mo)</span></td>
-          <td>$3,600</td>
+          <td><strong>High-Volume / PLG</strong><br><span style="font-size:13px;color:var(--text-body)">e.g., $100/mo subscription</span></td>
+          <td>$1,200</td>
           <td><span class="roi-highlight">1.6 deals / mo</span></td>
-          <td style="color:#10b981;font-weight:600">600%</td>
+          <td style="color:#10b981;font-weight:700">600%</td>
         </tr>
         <tr>
-          <td><strong>Mid-Market SaaS</strong><br><span style="font-size:13px;color:var(--text-body)">e.g., B2B Marketing Platforms</span></td>
-          <td>$6,000 <span style="font-size:13px;color:var(--text-body)">($500/mo)</span></td>
-          <td>$18,000</td>
+          <td><strong>Mid-Market Tool</strong><br><span style="font-size:13px;color:var(--text-body)">e.g., $500/mo platform</span></td>
+          <td>$6,000</td>
           <td><span class="roi-highlight">0.3 deals / mo</span></td>
-          <td style="color:#10b981;font-weight:600">3,000%</td>
+          <td style="color:#10b981;font-weight:700">3,000%</td>
         </tr>
         <tr>
-          <td><strong>Enterprise Solutions</strong><br><span style="font-size:13px;color:var(--text-body)">e.g., Core infrastructural tech</span></td>
+          <td><strong>Enterprise / Network</strong><br><span style="font-size:13px;color:var(--text-body)">e.g., Core infrastructural tech</span></td>
           <td>$30,000+</td>
-          <td>$90,000+</td>
           <td><span class="roi-highlight">1 deal every 1.2 years</span></td>
-          <td style="color:#10b981;font-weight:600">15,000%+</td>
+          <td style="color:#10b981;font-weight:700">15,000%+</td>
         </tr>
       </tbody>
     </table>
     
-    <div style="margin-top:40px;text-align:center">
-      <a href="/playbook-download.html" class="btn btn-primary" style="font-size:16px;padding:18px 36px">Read The Tactical Playbook</a>
+    <div style="margin-top:60px;text-align:center">
+      <button class="btn btn-primary" onclick="openModal()" style="font-size:18px;padding:20px 40px">Read The Full Tactical Playbook</button>
     </div>
   </div>
 </section>
+
+<footer style="background:#0f172a;color:#94a3b8;padding:40px 0;text-align:center">
+  <div class="wrap">
+    <div class="logo" style="justify-content:center;color:#fff;margin-bottom:16px">
+      <div class="logo-icon" style="width:24px;height:24px;font-size:12px">f</div> Facebook Groups OS
+    </div>
+    <p>© 2026 Facebook Groups OS. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  function openModal() {
+    document.getElementById('leadModal').classList.add('active');
+  }
+  function closeModal() {
+    document.getElementById('leadModal').classList.remove('active');
+  }
+  
+  // Close modal when clicking outside
+  document.getElementById('leadModal').addEventListener('click', function(e) {
+    if (e.target === this) { closeModal(); }
+  });
+
+  async function submitForm(e, isHero = false) {
+    e.preventDefault();
+    
+    const emailInput = isHero ? document.getElementById('heroEmail') : document.getElementById('modalEmail');
+    const btn = isHero ? document.getElementById('heroBtn') : document.getElementById('modalBtn');
+    
+    const email = emailInput.value.trim();
+    if(!email) return;
+    
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    // Optional: If you want to keep the Netlify function for email collection
+    try {
+      await fetch('/.netlify/functions/subscribe', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ email })
+      });
+    } catch(err) {
+      console.error('Fetch error:', err);
+    }
+
+    // Route to the tactical playbook page
+    window.location.href = '/playbook-download.html';
+  }
+</script>
 
 </body>
 </html>
