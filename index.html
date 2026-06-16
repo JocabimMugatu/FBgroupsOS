@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community Pipeline | Turn Your ICP Into Evangelists</title>
+<meta name="description" content="We build and manage high-intent Facebook communities for B2B SaaS and tech startups. Lower CAC, build evangelists.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#0B0F19;color:#e2e8f0;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
+:root{--bg-dark:#0B0F19;--bg-card:#111827;--brand-primary:#6366f1;--brand-hover:#4f46e5;--brand-glow:rgba(99,102,241,0.4);--text-main:#f8fafc;--text-muted:#94a3b8;--border:rgba(255,255,255,0.08);--green:#10b981;--r:12px}
+
+.d1{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;line-height:1.05;letter-spacing:-.03em;font-size:clamp(46px,7.5vw,84px);color:var(--text-main)}
+.d2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;line-height:1.05;letter-spacing:-.02em;font-size:clamp(30px,4.5vw,52px);color:var(--text-main)}
+.eye{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-primary);display:block;margin-bottom:16px}
+.lead{font-size:18px;font-weight:300;line-height:1.75;color:var(--text-muted)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 30px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;letter-spacing:.04em;border-radius:var(--r);cursor:pointer;transition:all .2s;white-space:nowrap}
+.btn-primary{background:var(--brand-primary);color:#fff;box-shadow:0 0 20px var(--brand-glow)}
+.btn-primary:hover{background:var(--brand-hover);transform:translateY(-2px);box-shadow:0 8px 30px rgba(99,102,241,.6)}
+.btn-ghost{background:transparent;color:var(--text-main);border:1px solid var(--border)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.sec-head{text-align:center;margin-bottom:64px}
+.sec-head p{max-width:600px;margin:16px auto 0}
+
+nav{position:sticky;top:0;z-index:200;background:rgba(11,15,25,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-in{max-width:1120px;margin:0 auto;padding:0 28px;height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.02em;color:#fff;display:flex;align-items:center;gap:0}
+.logo .hl{color:var(--brand-primary)}
+
+.hero{padding:100px 0 60px;position:relative;overflow:hidden;min-height:700px}
+.hero-bg{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hero-circle{position:absolute;border-radius:50%;filter:blur(120px);opacity:.15}
+.hero-circle.c1{width:600px;height:600px;right:-100px;top:-200px;background:#6366f1}
+.hero-circle.c2{width:500px;height:500px;left:-100px;bottom:-100px;background:#8b5cf6}
+.hero-in{max-width:1120px;margin:0 auto;padding:0 28px;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);border-radius:100px;padding:8px 18px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-primary);margin-bottom:28px}
+.hero-sub{font-size:18px;color:var(--text-muted);font-weight:300;line-height:1.75;margin-bottom:40px;margin-top:20px;max-width:480px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px}
+
+.saas-mockup{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;box-shadow:0 24px 60px rgba(0,0,0,.4);position:relative}
+.mockup-header{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:16px}
+.mockup-group-name{font-family:'Plus Jakarta Sans',font-weight:700;color:#fff;font-size:16px}
+.mockup-members{font-size:12px;color:var(--text-muted)}
+.mockup-post{background:rgba(255,255,255,.03);border-radius:8px;padding:16px;margin-bottom:12px}
+.m-user{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.m-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg, #6366f1, #8b5cf6);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold;color:#fff}
+.m-name{font-weight:600;font-size:14px;color:#fff}
+.m-text{font-size:14px;color:var(--text-muted);line-height:1.5}
+.m-text strong{color:var(--brand-primary)}
+
+.prob-section{padding:96px 0;position:relative;z-index:1}
+.prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.prob-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);padding:36px 32px;transition:transform .2s}
+.prob-card:hover{transform:translateY(-4px);border-color:rgba(99,102,241,.3)}
+.prob-ico{width:56px;height:56px;background:rgba(99,102,241,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:24px;color:var(--brand-primary)}
+.prob-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:12px}
+.prob-body{font-size:15px;color:var(--text-muted);line-height:1.7}
+
+.anecdote-section{padding:96px 0;background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.anecdote-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.quote-box{background:rgba(255,255,255,.03);padding:40px;border-radius:16px;border-left:4px solid var(--brand-primary)}
+.quote-text{font-size:20px;font-style:italic;color:#fff;margin-bottom:20px;line-height:1.6}
+.quote-author{display:flex;align-items:center;gap:16px}
+.author-avatar{width:48px;height:48px;border-radius:50%;background:#475569}
+
+.roi-section{padding:96px 0}
+.roi-box{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:48px;text-align:center;max-width:800px;margin:0 auto}
+.roi-math{display:flex;justify-content:center;gap:40px;margin:40px 0;flex-wrap:wrap}
+.math-item{text-align:center}
+.math-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:48px;font-weight:800;color:var(--brand-primary);margin-bottom:8px}
+.math-label{color:var(--text-muted);font-size:14px;text-transform:uppercase;letter-spacing:.1em}
+
+.highlight-text{background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-in">
+    <a href="#" class="logo">Community<span class="hl">OS</span></a>
+    <div class="nav-cta-d"><a href="#playbook" class="btn btn-primary">See The Playbook</a></div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-circle c1"></div>
+    <div class="hero-circle c2"></div>
+  </div>
+  <div class="hero-in">
+    <div class="hero-left">
+      <div class="hero-badge">Owned Attention > Rented Ads</div>
+      <h1 class="d1">Lower your CAC.<br><span class="highlight-text">Build a pipeline of evangelists.</span></h1>
+      <p class="hero-sub">You're renting attention on Meta. We build fully-managed Facebook communities that turn your B2B SaaS ICP into high-intent superfans.</p>
+      <div class="hero-btns">
+        <a href="#anecdote" class="btn btn-primary">The HubSpot Acquisition Story</a>
+        <a href="#playbook" class="btn btn-ghost">Get The Playbook</a>
+      </div>
+    </div>
+
+    <div class="saas-mockup">
+      <div class="mockup-header">
+        <div style="width:40px;height:40px;background:#1877f2;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;font-size:20px">f</div>
+        <div>
+          <div class="mockup-group-name">B2B Founders & GTM Strategies</div>
+          <div class="mockup-members">14.2K Members • Private Group</div>
+        </div>
+      </div>
+      <div class="mockup-post">
+        <div class="m-user"><div class="m-avatar" style="background:#475569">DK</div><div class="m-name">David K.</div></div>
+        <div class="m-text">We're burning cash on Meta right now. Anyone have a solid tool for automating outbound workflows?</div>
+      </div>
+      <div class="mockup-post" style="border:1px solid var(--brand-primary);background:rgba(99,102,241,0.05)">
+        <div class="m-user"><div class="m-avatar">KN</div><div class="m-name">Kris N. <span style="color:var(--brand-primary);font-size:12px">✓ Admin</span></div></div>
+        <div class="m-text">Hey Founders! To celebrate hitting 14k members, I'm giving away <strong>3 free lifetime Viktor licenses</strong> to bootstrapped founders in this group. Drop your startup in the comments to enter 👇</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="prob-section">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eye">The CAC Crisis</span>
+      <h2 class="d2">Your competitors are outspending you.</h2>
+      <p class="lead">Every traditional B2B growth channel is getting louder, more expensive, and less effective.</p>
+    </div>
+    <div class="prob-grid">
+      <div class="prob-card">
+        <div class="prob-ico">💸</div>
+        <div class="prob-title">Meta & Google Ads</div>
+        <div class="prob-body">You're running 200+ active ads just to maintain pipeline. Turn off the spend, leads drop to zero.</div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-ico">🧊</div>
+        <div class="prob-title">Cold Outbound</div>
+        <div class="prob-body">Inboxes are flooded with AI spam. Your ICP ignores cold pitches unless they have a burning pain point.</div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-ico">⏳</div>
+        <div class="prob-title">SEO & Content</div>
+        <div class="prob-body">It takes 6-12 months to see a return. By the time your blog ranks, the algorithm changes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="anecdote" class="anecdote-section">
+  <div class="wrap anecdote-grid">
+    <div>
+      <span class="eye">The Enterprise Value of Community</span>
+      <h2 class="d2">Why HubSpot bought The Hustle.</h2>
+      <p class="lead" style="margin-top:20px;margin-bottom:20px">When Sam Parr was negotiating the sale of The Hustle to HubSpot, the real moat wasn't just the newsletter list. It was the <strong>Trends Facebook Group</strong>.</p>
+      <p class="lead">HubSpot executives lurked in the private Facebook group and witnessed founders actively engaging, sharing highly technical playbooks, and evangelizing products. Community isn't just top-of-funnel marketing—it is defensible enterprise value.</p>
+    </div>
+    <div class="quote-box">
+      <div class="quote-text">"The HubSpot execs were in the Trends group. They saw the caliber of the conversation. They saw how sticky it was. That community engagement heavily drove the acquisition thesis."</div>
+      <div class="quote-author">
+        <div>
+          <div style="font-weight:700;color:#fff">Sam Parr Context</div>
+          <div style="font-size:14px;color:var(--text-muted)">Founder, The Hustle</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="roi-section">
+  <div class="wrap">
+    <div class="roi-box">
+      <h2 class="d2">The SaaS ROI Math</h2>
+      <p class="lead" style="margin-top:16px">You only need a fraction of a percent of a community to convert to make the unit economics highly profitable.</p>
+      
+      <div class="roi-math">
+        <div class="math-item">
+          <div class="math-num">$500</div>
+          <div class="math-label">Avg SaaS ACV</div>
+        </div>
+        <div class="math-item" style="color:var(--text-muted);font-size:32px;line-height:48px">×</div>
+        <div class="math-item">
+          <div class="math-num">4</div>
+          <div class="math-label">New Customers / Mo</div>
+        </div>
+        <div class="math-item" style="color:var(--text-muted);font-size:32px;line-height:48px">=</div>
+        <div class="math-item">
+          <div class="math-num" style="color:var(--green)">Infinite</div>
+          <div class="math-label">ROI on Community</div>
+        </div>
+      </div>
+      <p style="color:var(--text-muted)">If a 5,000-person highly targeted founder group generates just 4 conversions a month, the community pays for itself while building a long-term moat.</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
