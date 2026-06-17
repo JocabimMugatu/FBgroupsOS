@@ -68,6 +68,7 @@ function buildApplyConfirmationEmail({ name, email }) {
   return {
     from: FROM_ADDRESS,
     to: [email],
+    reply_to: NOTIFY_TO,
     subject: 'Your Group Reach application — what happens next',
     html: `
       <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto;color:#222;line-height:1.6">
@@ -86,6 +87,7 @@ function buildPlaybookInternalEmail({ email }) {
   return {
     from: FROM_ADDRESS,
     to: [NOTIFY_TO],
+    reply_to: email,
     subject: `Playbook requested — ${email}`,
     html: `
       <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto">
@@ -100,6 +102,7 @@ function buildPlaybookDeliveryEmail({ email }) {
   return {
     from: FROM_ADDRESS,
     to: [email],
+    reply_to: NOTIFY_TO,
     subject: 'Your Group Infiltration Playbook is here',
     html: `
       <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto;color:#222;line-height:1.6">
