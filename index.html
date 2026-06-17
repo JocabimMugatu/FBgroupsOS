@@ -901,15 +901,30 @@ setPhase(0);
 // ── PLAYBOOK MODAL ──
 function openPlaybook(){ document.getElementById('playbookModal').style.display='flex'; }
 document.getElementById('playbookModal').addEventListener('click',function(e){ if(e.target===this) this.style.display='none'; });
-function handlePlaybookSubmit(){
-  const email=document.getElementById('pb-email').value;
+
+async function handlePlaybookSubmit(){
+  const email=document.getElementById('pb-email').value.trim();
   if(!email||!email.includes('@')) return;
-  document.getElementById('pb-success').style.display='block';
-  document.getElementById('pb-email').style.display='none';
-  document.querySelector('#playbookModal button[onclick="handlePlaybookSubmit()"]').style.display='none';
+  const btn=document.querySelector('#playbookModal button[onclick="handlePlaybookSubmit()"]');
+  const originalText=btn.textContent;
+  btn.textContent='Sending...'; btn.disabled=true;
+  try{
+    const res=await fetch('/.netlify/functions/send-email',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({type:'playbook',email})
+    });
+    if(!res.ok) throw new Error('Request failed');
+    document.getElementById('pb-success').style.display='block';
+    document.getElementById('pb-email').style.display='none';
+    btn.style.display='none';
+  }catch(e){
+    btn.textContent=originalText; btn.disabled=false;
+    btn.insertAdjacentHTML('afterend','<p style="font-size:12px;color:#E53E3E;text-align:center;margin-top:8px">Something went wrong — please try again.</p>');
+  }
 }
 
-// ── APPLY FORM with Resend ──
+// ── APPLY FORM ──
 async function handleApply(){
   const name=document.getElementById('apply-name').value.trim();
   const email=document.getElementById('apply-email').value.trim();
@@ -921,44 +936,43 @@ async function handleApply(){
     return;
   }
   const btn=document.querySelector('.apply-submit');
+  const originalText=btn.textContent;
   btn.textContent='Sending...'; btn.disabled=true;
   try {
-    const res = await fetch('https://api.resend.com/emails', {
+    const res = await fetch('/.netlify/functions/send-email', {
       method:'POST',
-      headers:{'Content-Type':'application/json','Authorization':'Bearer YOUR_RESEND_API_KEY'},
-      body: JSON.stringify({
-        from: 'applications@groupreach.com',
-        to: ['YOUR_EMAIL@example.com'],
-        subject: `New Group Reach Application — ${company}`,
-        html: `<h2>New Application</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Company:</strong> ${company}</p>
-          <p><strong>Monthly Revenue:</strong> ${revenue || 'Not provided'}</p>
-          <p><strong>About their product & ICP:</strong></p>
-          <blockquote style="border-left:3px solid #1A56FF;padding-left:12px;color:#444">${about.replace(/\n/g,'<br>')}</blockquote>`
-      })
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({type:'apply',name,email,company,revenue,about})
     });
-    if(res.ok || res.status===200){
-      document.getElementById('applyForm').style.display='none';
-      document.getElementById('applySuccess').style.display='block';
-    } else {
-      // Still show success to user — log error silently
-      document.getElementById('applyForm').style.display='none';
-      document.getElementById('applySuccess').style.display='block';
-    }
-  } catch(e) {
+    if(!res.ok) throw new Error('Request failed');
     document.getElementById('applyForm').style.display='none';
     document.getElementById('applySuccess').style.display='block';
+  } catch(e) {
+    btn.textContent=originalText; btn.disabled=false;
+    btn.insertAdjacentHTML('afterend','<p style="font-size:13px;color:#FF8A8A;margin-top:10px">Something went wrong sending your application — please try again or email us directly.</p>');
   }
 }
 
 // ── PLAYBOOK CAPTURE STRIP ──
-function handleCapture(){
-  const email=document.getElementById('captureEmail').value;
+async function handleCapture(){
+  const email=document.getElementById('captureEmail').value.trim();
   if(!email||!email.includes('@')) return;
-  document.querySelector('.capture-strip').style.display='none';
-  document.getElementById('captureSuccess').style.display='block';
+  const btn=document.querySelector('.capture-submit-sm');
+  const originalText=btn.textContent;
+  btn.textContent='Sending...'; btn.disabled=true;
+  try{
+    const res=await fetch('/.netlify/functions/send-email',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({type:'playbook',email})
+    });
+    if(!res.ok) throw new Error('Request failed');
+    document.querySelector('.capture-strip').style.display='none';
+    document.getElementById('captureSuccess').style.display='block';
+  }catch(e){
+    btn.textContent=originalText; btn.disabled=false;
+    btn.insertAdjacentHTML('afterend','<p style="font-size:12px;color:#E53E3E;margin-top:8px;width:100%">Something went wrong — please try again.</p>');
+  }
 }
 </script>
 </body>

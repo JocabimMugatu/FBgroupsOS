@@ -1,10 +1,3 @@
 [build]
   functions = "netlify/functions"
-
-[build.environment]
-  AWS_LAMBDA_JS_RUNTIME = "nodejs18.x"
-
-[[redirects]]
-  from = "/playbook-download"
-  to = "/playbook-download.html"
-  status = 200
+  publish = "."
