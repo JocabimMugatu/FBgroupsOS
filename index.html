@@ -898,6 +898,22 @@ function setPhase(i){
 }
 setPhase(0);
 
+// ── helper: show a single reusable error message under a button, never stacking ──
+function showInlineError(btn, id, message, extraStyle){
+  let el=document.getElementById(id);
+  if(!el){
+    el=document.createElement('p');
+    el.id=id;
+    el.style.cssText=extraStyle;
+    btn.insertAdjacentElement('afterend', el);
+  }
+  el.textContent=message;
+}
+function clearInlineError(id){
+  const el=document.getElementById(id);
+  if(el) el.remove();
+}
+
 // ── PLAYBOOK MODAL ──
 function openPlaybook(){ document.getElementById('playbookModal').style.display='flex'; }
 document.getElementById('playbookModal').addEventListener('click',function(e){ if(e.target===this) this.style.display='none'; });
@@ -907,6 +923,7 @@ async function handlePlaybookSubmit(){
   if(!email||!email.includes('@')) return;
   const btn=document.querySelector('#playbookModal button[onclick="handlePlaybookSubmit()"]');
   const originalText=btn.textContent;
+  clearInlineError('pb-error');
   btn.textContent='Sending...'; btn.disabled=true;
   try{
     const res=await fetch('/.netlify/functions/send-email',{
@@ -914,13 +931,18 @@ async function handlePlaybookSubmit(){
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({type:'playbook',email})
     });
-    if(!res.ok) throw new Error('Request failed');
+    if(!res.ok){
+      const errBody=await res.text().catch(()=>'');
+      console.error('Playbook send failed:', res.status, errBody);
+      throw new Error('Request failed');
+    }
     document.getElementById('pb-success').style.display='block';
     document.getElementById('pb-email').style.display='none';
     btn.style.display='none';
   }catch(e){
+    console.error(e);
     btn.textContent=originalText; btn.disabled=false;
-    btn.insertAdjacentHTML('afterend','<p style="font-size:12px;color:#E53E3E;text-align:center;margin-top:8px">Something went wrong — please try again.</p>');
+    showInlineError(btn,'pb-error','Something went wrong — please try again.','font-size:12px;color:#E53E3E;text-align:center;margin-top:8px');
   }
 }
 
@@ -937,6 +959,7 @@ async function handleApply(){
   }
   const btn=document.querySelector('.apply-submit');
   const originalText=btn.textContent;
+  clearInlineError('apply-error');
   btn.textContent='Sending...'; btn.disabled=true;
   try {
     const res = await fetch('/.netlify/functions/send-email', {
@@ -944,12 +967,17 @@ async function handleApply(){
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({type:'apply',name,email,company,revenue,about})
     });
-    if(!res.ok) throw new Error('Request failed');
+    if(!res.ok){
+      const errBody=await res.text().catch(()=>'');
+      console.error('Apply send failed:', res.status, errBody);
+      throw new Error('Request failed');
+    }
     document.getElementById('applyForm').style.display='none';
     document.getElementById('applySuccess').style.display='block';
   } catch(e) {
+    console.error(e);
     btn.textContent=originalText; btn.disabled=false;
-    btn.insertAdjacentHTML('afterend','<p style="font-size:13px;color:#FF8A8A;margin-top:10px">Something went wrong sending your application — please try again or email us directly.</p>');
+    showInlineError(btn,'apply-error','Something went wrong sending your application — please try again or email us directly.','font-size:13px;color:#FF8A8A;margin-top:10px');
   }
 }
 
@@ -959,6 +987,7 @@ async function handleCapture(){
   if(!email||!email.includes('@')) return;
   const btn=document.querySelector('.capture-submit-sm');
   const originalText=btn.textContent;
+  clearInlineError('capture-error');
   btn.textContent='Sending...'; btn.disabled=true;
   try{
     const res=await fetch('/.netlify/functions/send-email',{
@@ -966,12 +995,17 @@ async function handleCapture(){
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({type:'playbook',email})
     });
-    if(!res.ok) throw new Error('Request failed');
+    if(!res.ok){
+      const errBody=await res.text().catch(()=>'');
+      console.error('Capture send failed:', res.status, errBody);
+      throw new Error('Request failed');
+    }
     document.querySelector('.capture-strip').style.display='none';
     document.getElementById('captureSuccess').style.display='block';
   }catch(e){
+    console.error(e);
     btn.textContent=originalText; btn.disabled=false;
-    btn.insertAdjacentHTML('afterend','<p style="font-size:12px;color:#E53E3E;margin-top:8px;width:100%">Something went wrong — please try again.</p>');
+    showInlineError(btn,'capture-error','Something went wrong — please try again.','font-size:12px;color:#E53E3E;margin-top:8px;width:100%');
   }
 }
 </script>
