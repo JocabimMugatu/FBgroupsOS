@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Group Infiltration Playbook — Group Reach</title>
+<meta name="description" content="The complete operational framework for using Facebook groups to generate B2B pipeline. Group mapping, content cadence, intent signals, and DM scripts.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231A56FF'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='Arial Black,sans-serif' font-weight='900' font-size='20' fill='white'>G</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#F8F7F4;color:#111;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+:root{
+  --blue:#1A56FF;--blue-pale:#EEF2FF;--blue-dark:#1240CC;
+  --ink:#111111;--ink-mid:#555;--ink-light:#999;
+  --bg:#F8F7F4;--bg-white:#fff;--green:#12B76A;
+  --border:#E2E0DA;--r:10px;--r-lg:16px;
+}
+
+/* SIDEBAR NAV */
+.sidebar{position:fixed;top:0;left:0;width:260px;height:100vh;background:var(--bg-white);border-right:1px solid var(--border);overflow-y:auto;padding:0 0 40px;z-index:100}
+.sidebar-logo{display:flex;align-items:center;gap:8px;padding:20px 24px;border-bottom:1px solid var(--border);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;letter-spacing:-.02em;color:var(--ink)}
+.logo-mark{width:26px;height:26px;background:var(--blue);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:900;flex-shrink:0}
+.sidebar-section{padding:20px 24px 6px;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-light)}
+.sidebar-menu{list-style:none;padding:0 12px}
+.sidebar-menu li a{display:block;padding:8px 12px;border-radius:7px;font-size:13px;color:var(--ink-mid);transition:all .15s;line-height:1.4}
+.sidebar-menu li a:hover{background:#F0EEE9;color:var(--ink)}
+.sidebar-menu li a.active{background:var(--blue-pale);color:var(--blue);font-weight:600}
+.sidebar-cta{margin:20px 12px 0;background:var(--blue);border-radius:var(--r);padding:16px;text-align:center}
+.sidebar-cta p{font-size:12px;color:rgba(255,255,255,.7);margin-bottom:10px;line-height:1.5}
+.sidebar-cta a{display:block;background:#fff;color:var(--blue);border-radius:6px;padding:8px;font-size:12px;font-weight:700;transition:opacity .15s}
+.sidebar-cta a:hover{opacity:.9}
+
+/* MAIN */
+.main{margin-left:260px;padding:0 0 120px}
+.doc-hero{background:var(--ink);padding:56px 72px;position:relative;overflow:hidden}
+.doc-hero::before{content:'';position:absolute;top:-100px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(26,86,255,.3) 0%,transparent 65%);pointer-events:none}
+.doc-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(26,86,255,.2);border:1px solid rgba(26,86,255,.3);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:600;color:#6B7DFF;letter-spacing:.05em;margin-bottom:18px}
+.doc-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(28px,4vw,48px);letter-spacing:-.03em;color:#fff;line-height:1.05;margin-bottom:16px}
+.doc-sub{font-size:16px;color:rgba(255,255,255,.55);max-width:560px;line-height:1.7;margin-bottom:28px}
+.doc-meta{display:flex;gap:24px;flex-wrap:wrap}
+.meta-item{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,.4)}
+.meta-dot{width:4px;height:4px;background:rgba(255,255,255,.3);border-radius:50%}
+
+/* CONTENT */
+.content{padding:56px 72px;max-width:820px}
+h2.section-head{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;letter-spacing:-.02em;color:var(--ink);margin-bottom:8px;margin-top:64px;padding-top:64px;border-top:1px solid var(--border)}
+h2.section-head:first-child{margin-top:0;padding-top:0;border-top:none}
+h3.sub-head{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;letter-spacing:-.015em;color:var(--ink);margin:32px 0 12px}
+p.body{font-size:15px;line-height:1.8;color:var(--ink-mid);margin-bottom:16px}
+p.body strong{color:var(--ink);font-weight:600}
+.eyebrow-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;display:block}
+
+/* CALLOUT BOXES */
+.callout{border-radius:var(--r-lg);padding:24px 28px;margin:24px 0}
+.callout-insight{background:var(--blue-pale);border:1px solid #C7D3FF}
+.callout-insight .callout-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.callout-insight p{font-size:14px;line-height:1.7;color:#1A3399}
+.callout-warning{background:#FFF7ED;border:1px solid #FED7AA}
+.callout-warning .callout-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#C2410C;margin-bottom:8px}
+.callout-warning p{font-size:14px;line-height:1.7;color:#7C2D12}
+.callout-success{background:#F0FDF4;border:1px solid #BBF7D0}
+.callout-success .callout-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#15803D;margin-bottom:8px}
+.callout-success p{font-size:14px;line-height:1.7;color:#14532D}
+
+/* FRAMEWORK CARDS */
+.framework-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:20px 0}
+.framework-card{background:var(--bg-white);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px}
+.framework-card-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--blue);font-weight:500;margin-bottom:8px}
+.framework-card-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;color:var(--ink);margin-bottom:6px}
+.framework-card-body{font-size:13px;line-height:1.6;color:var(--ink-mid)}
+
+/* SCORING TABLE */
+.score-table{width:100%;border-collapse:collapse;font-size:13px;margin:20px 0;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border)}
+.score-table th{background:#F5F4F0;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);padding:12px 16px;text-align:left;border-bottom:1px solid var(--border)}
+.score-table td{padding:12px 16px;border-bottom:1px solid #F5F4F0;vertical-align:top}
+.score-table tr:last-child td{border-bottom:none}
+.score-high{color:var(--green);font-weight:600}
+.score-med{color:#F59E0B;font-weight:600}
+.score-low{color:#E53E3E;font-weight:600}
+
+/* CONTENT CALENDAR */
+.week-grid{display:flex;flex-direction:column;gap:12px;margin:20px 0}
+.week-day{background:var(--bg-white);border:1px solid var(--border);border-radius:var(--r);padding:14px 18px;display:grid;grid-template-columns:80px 1fr;gap:16px;align-items:start}
+.day-label{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--blue);font-weight:500;padding-top:2px}
+.day-content-type{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.day-content-desc{font-size:13px;color:var(--ink-mid);line-height:1.5}
+.day-example{font-style:italic;font-size:12px;color:var(--ink-light);margin-top:4px}
+
+/* DM SCRIPTS */
+.script-block{background:#F5F4F0;border-radius:var(--r-lg);padding:24px;margin:16px 0}
+.script-meta{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.script-meta-dot{width:6px;height:6px;border-radius:50%}
+.script-step-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:5px;margin-top:14px}
+.script-step-label:first-child{margin-top:0}
+.script-line{font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.7;color:#333;background:var(--bg-white);border:1px solid var(--border);border-radius:7px;padding:12px 14px;margin-bottom:4px}
+.script-var{color:var(--blue);font-weight:500}
+.script-note{font-size:11px;color:var(--ink-light);font-style:italic;margin-top:4px;padding-left:4px}
+
+/* SIGNAL TABLE */
+.signal-grid{display:flex;flex-direction:column;gap:10px;margin:16px 0}
+.signal-row{display:grid;grid-template-columns:24px 140px 1fr;gap:12px;align-items:start;background:var(--bg-white);border:1px solid var(--border);border-radius:var(--r);padding:12px 16px}
+.signal-indicator{width:10px;height:10px;border-radius:50%;margin-top:3px;flex-shrink:0}
+.signal-type{font-size:12px;font-weight:700;color:var(--ink)}
+.signal-desc{font-size:12px;color:var(--ink-mid);line-height:1.5}
+.signal-example{font-style:italic;font-size:11px;color:var(--ink-light);margin-top:3px}
+
+/* CHECKLIST */
+.checklist{display:flex;flex-direction:column;gap:8px;margin:16px 0}
+.check-item{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.6;color:var(--ink-mid)}
+.check-box{width:18px;height:18px;border-radius:5px;background:var(--blue-pale);border:1px solid #C7D3FF;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--blue);flex-shrink:0;margin-top:2px}
+
+/* RULES / NUMBERED */
+.rule-list{display:flex;flex-direction:column;gap:12px;margin:20px 0}
+.rule-item{display:grid;grid-template-columns:32px 1fr;gap:14px;align-items:start}
+.rule-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--blue);width:32px;height:32px;background:var(--blue-pale);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rule-body{font-size:14px;line-height:1.7;color:var(--ink-mid);padding-top:6px}
+.rule-body strong{color:var(--ink)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .sidebar{display:none}
+  .main{margin-left:0}
+  .doc-hero,.content{padding:40px 24px}
+  .framework-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark">G</div>
+    Group Reach
+  </div>
+  <div class="sidebar-section">The Playbook</div>
+  <ul class="sidebar-menu">
+    <li><a href="#intro" class="active">Introduction</a></li>
+    <li><a href="#why-groups">Why Groups Still Work</a></li>
+  </ul>
+  <div class="sidebar-section">Part I — Research</div>
+  <ul class="sidebar-menu">
+    <li><a href="#group-mapping">Group Mapping Framework</a></li>
+    <li><a href="#scoring">Scoring & Prioritization</a></li>
+  </ul>
+  <div class="sidebar-section">Part II — Content</div>
+  <ul class="sidebar-menu">
+    <li><a href="#content-rules">The 5 Rules of Group Content</a></li>
+    <li><a href="#cadence">The 4-1-1 Weekly Cadence</a></li>
+    <li><a href="#post-templates">Post Templates & Formulas</a></li>
+  </ul>
+  <div class="sidebar-section">Part III — Pipeline</div>
+  <ul class="sidebar-menu">
+    <li><a href="#intent-signals">Intent Signal Monitoring</a></li>
+    <li><a href="#dm-scripts">DM Scripts (Word-for-Word)</a></li>
+    <li><a href="#handoff">The AE Handoff Protocol</a></li>
+  </ul>
+  <div class="sidebar-section">Part IV — Operations</div>
+  <ul class="sidebar-menu">
+    <li><a href="#launch-checklist">30-Day Launch Checklist</a></li>
+    <li><a href="#mistakes">5 Mistakes That Get You Banned</a></li>
+    <li><a href="#metrics">How to Measure Success</a></li>
+  </ul>
+  <div class="sidebar-cta">
+    <p>Ready to hand this off completely?</p>
+    <a href="index.html#apply">Apply for Done-For-You →</a>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+  <!-- HERO -->
+  <div class="doc-hero">
+    <div style="position:relative;z-index:1">
+      <div class="doc-tag">📖 Group Reach · Internal Documentation v1.0</div>
+      <h1 class="doc-title">The Group Infiltration Playbook</h1>
+      <p class="doc-sub">The complete operating framework for generating B2B pipeline from Facebook groups. Group mapping, content cadence, intent signal monitoring, and word-for-word DM scripts.</p>
+      <div class="doc-meta">
+        <span class="meta-item">~25 min read</span>
+        <span class="meta-item"><span class="meta-dot"></span>4 frameworks</span>
+        <span class="meta-item"><span class="meta-dot"></span>6 DM script variants</span>
+        <span class="meta-item"><span class="meta-dot"></span>30-day launch checklist</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- INTRO -->
+    <h2 class="section-head" id="intro">Introduction</h2>
+    <p class="body">This playbook documents the exact methodology Group Reach uses for every client engagement. It's the result of running this channel across dozens of B2B SaaS products, home service companies, and professional networks — and distilling what actually converts versus what gets accounts banned or ignored.</p>
+    <p class="body">The core insight is simple: <strong>your ICP is already having conversations about their problems in Facebook groups</strong>. They're asking for tool recommendations, complaining about their current stack, and sharing budget decisions — in public, right now. Most B2B companies are completely absent from these conversations. The ones that show up credibly, consistently, and without pitching immediately are the ones that win.</p>
+    <div class="callout callout-insight">
+      <div class="callout-label">The key principle</div>
+      <p>You are not a vendor in these groups. You are a practitioner who happens to have built (or represent) a solution. Every post, comment, and DM must earn trust before it earns a meeting. The trust-building is what makes the meeting worth 10× what a cold outbound meeting is worth.</p>
+    </div>
+
+    <!-- WHY GROUPS -->
+    <h2 class="section-head" id="why-groups">Why Facebook Groups Still Work in 2025</h2>
+    <p class="body">There's a persistent misconception that Facebook is "dead" for B2B. It isn't — it's just been ignored by most B2B marketers, which is exactly why it works. The platform has 1.8 billion monthly active group users. The groups your ICP is in have tens of thousands of members having zero-noise conversations that LinkedIn's algorithm suppresses and Twitter's chaos buries.</p>
+    <p class="body">Here's what makes groups uniquely powerful for B2B pipeline:</p>
+    <div class="rule-list">
+      <div class="rule-item">
+        <div class="rule-num">01</div>
+        <div class="rule-body"><strong>No ad units inside groups.</strong> There's no sponsored content competing with your posts. When you show up with a valuable post, you own the feed in a way no paid channel allows.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">02</div>
+        <div class="rule-body"><strong>Intent is explicit and real-time.</strong> Someone posting "we're evaluating tools for X" in a private group is more qualified than any lead magnet download. They've identified a problem, sought a community, and are actively asking. That's a warm lead with zero media spend.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">03</div>
+        <div class="rule-body"><strong>Conversation data tells you exactly what to say.</strong> Read 30 days of posts in your ICP's group and you'll know their vocabulary, their frustrations, their current tools, their decision triggers. No customer research survey required.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">04</div>
+        <div class="rule-body"><strong>Trust transfers.</strong> When a member of the group says "this helped me" in a comment on your post, that social proof carries more weight than any case study on your website. It's peer-to-peer in a context your prospect already trusts.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">05</div>
+        <div class="rule-body"><strong>The DM is warm by default.</strong> Referencing someone's public post when you DM them isn't cold outreach — it's a natural continuation of a conversation. Open rates on these messages run 70–80% vs. 20–30% for cold email sequences.</div>
+      </div>
+    </div>
+
+    <!-- PART I: GROUP MAPPING -->
+    <h2 class="section-head" id="group-mapping">Part I — Group Mapping Framework</h2>
+    <p class="body">The single most important decision in this entire process is <strong>which groups you target</strong>. A mediocre strategy in a great group beats an excellent strategy in the wrong group by 10:1. Spend more time here than anywhere else.</p>
+
+    <h3 class="sub-head">Step 1: Build Your Group Candidate List</h3>
+    <p class="body">Search Facebook using these query structures and log every group with 1,000+ members that comes up:</p>
+    <div class="checklist">
+      <div class="check-item"><div class="check-box">→</div><span><strong>[ICP job title] + [industry]</strong> — e.g., "VP Sales B2B", "Marketing Ops SaaS"</span></div>
+      <div class="check-item"><div class="check-box">→</div><span><strong>[Problem your product solves]</strong> — e.g., "cold email strategies", "sales automation", "data enrichment"</span></div>
+      <div class="check-item"><div class="check-box">→</div><span><strong>[Industry + "strategies" or "hacks" or "tips"]</strong> — these attract practitioners, not lurkers</span></div>
+      <div class="check-item"><div class="check-box">→</div><span><strong>[Competitor's category]</strong> — e.g., "HubSpot alternatives", "Salesforce users" — buyers already evaluating</span></div>
+      <div class="check-item"><div class="check-box">→</div><span><strong>[Pain point + "help" or "advice"]</strong> — e.g., "B2B outbound help", "CAC reduction SaaS"</span></div>
+    </div>
+    <p class="body">Aim for a candidate list of 20–40 groups before scoring. More is better at this stage.</p>
+
+    <h3 class="sub-head" id="scoring">Step 2: Score Each Group (The 5-Factor System)</h3>
+    <p class="body">Not all groups are equal. Score each candidate group on these five dimensions, 1–3 each, for a max score of 15:</p>
+    <table class="score-table">
+      <thead>
+        <tr>
+          <th>Factor</th>
+          <th>Score 1</th>
+          <th>Score 2</th>
+          <th>Score 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Member Count</strong></td>
+          <td>1K–5K</td>
+          <td>5K–50K</td>
+          <td class="score-high">50K+</td>
+        </tr>
+        <tr>
+          <td><strong>Post Frequency</strong></td>
+          <td>1–3/week</td>
+          <td>1–3/day</td>
+          <td class="score-high">10+/day</td>
+        </tr>
+        <tr>
+          <td><strong>Comment Quality</strong></td>
+          <td>Mostly reactions, few words</td>
+          <td>Short replies, some depth</td>
+          <td class="score-high">Detailed threads, debate</td>
+        </tr>
+        <tr>
+          <td><strong>ICP Match</strong></td>
+          <td>Tangential audience</td>
+          <td>Partial match (50–70%)</td>
+          <td class="score-high">Direct ICP, 80%+</td>
+        </tr>
+        <tr>
+          <td><strong>Posting Rules</strong></td>
+          <td>Strict (no links, no promo)</td>
+          <td>Moderate rules</td>
+          <td class="score-high">Open — value posts allowed</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="callout callout-insight">
+      <div class="callout-label">Prioritization rule</div>
+      <p>Target groups scoring 10–15 first. Groups scoring 7–9 are second-tier worth testing. Below 7, the return on time is unlikely to justify it. You typically want 5–8 primary groups per client, monitored daily.</p>
+    </div>
+
+    <!-- PART II: CONTENT -->
+    <h2 class="section-head" id="content-rules">Part II — The 5 Rules of Group Content</h2>
+    <p class="body">Most companies fail at group infiltration because they treat it like a broadcast channel. It isn't. It's a conversation. These rules are non-negotiable:</p>
+    <div class="rule-list">
+      <div class="rule-item">
+        <div class="rule-num">01</div>
+        <div class="rule-body"><strong>Never mention your product in the first 30 days.</strong> This sounds extreme but it's the most important rule. Your first job is to be recognized as a knowledgeable, generous practitioner. Once the group knows your name and trusts your takes, the soft product mention lands completely differently.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">02</div>
+        <div class="rule-body"><strong>Every value post must work without any CTA.</strong> Write the post as if you'll never mention your product. If it only works as a setup for a pitch, rewrite it. The best posts generate comments asking "how do you do this?" — which opens the DM naturally.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">03</div>
+        <div class="rule-body"><strong>Use the group's vocabulary, not your product's vocabulary.</strong> Read 50 posts before writing one. Note the exact phrases members use to describe their problems. Mirror that language precisely. "Outbound sequencing" might be how you'd say it — "getting my reps to actually follow up" might be how they say it.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">04</div>
+        <div class="rule-body"><strong>Engage in threads you didn't start first.</strong> In week one, comment thoughtfully on 10 existing threads before posting anything. Establishes presence, surfaces your profile to active members, and lets you read the room before going on record.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">05</div>
+        <div class="rule-body"><strong>Tag sparingly and only when genuinely relevant.</strong> Tagging someone who didn't ask to be tagged is the fastest way to feel like spam. Only tag people when directly responding to their comment or referencing their specific situation with permission.</div>
+      </div>
+    </div>
+
+    <h3 class="sub-head" id="cadence">The 4-1-1 Weekly Content Cadence</h3>
+    <p class="body">This is the posting rhythm that builds authority without burning goodwill. Spread across Monday–Friday, never more than one post per group per day:</p>
+    <div class="week-grid">
+      <div class="week-day">
+        <div class="day-label">Mon / Tue<br>× 2</div>
+        <div>
+          <div class="day-content-type" style="color:var(--blue)">Value Post (Deep Teardown)</div>
+          <div class="day-content-desc">A detailed workflow, framework, or data analysis your ICP can immediately apply. No product mention. This is the content that earns you a reputation in the group.</div>
+          <div class="day-example">"Here's the exact sequence we use to scrape high-intent LinkedIn signals and route them to cold email — full node breakdown below."</div>
+        </div>
+      </div>
+      <div class="week-day">
+        <div class="day-label">Wed<br>× 1</div>
+        <div>
+          <div class="day-content-type" style="color:var(--blue)">Value Post (Quick Win)</div>
+          <div class="day-content-desc">A shorter, highly specific tip or observation. Something that takes 30 seconds to read but is immediately actionable. These get the most shares.</div>
+          <div class="day-example">"The subject line that got us a 62% reply rate this quarter. One word change from what we were testing before — here's why it works."</div>
+        </div>
+      </div>
+      <div class="week-day">
+        <div class="day-label">Thu<br>× 1</div>
+        <div>
+          <div class="day-content-type" style="color:#C2410C">Engagement Trigger</div>
+          <div class="day-content-desc">A controversial opinion, hot-take, or poll designed to spark debate. This post exists to fire the Facebook algorithm and surface your profile to new members who weren't seeing you before.</div>
+          <div class="day-example">"Unpopular opinion: your SDR team is your bottleneck, not your tool. Change my mind." — or a poll: "Cold calling in 2025: dead or just misunderstood?"</div>
+        </div>
+      </div>
+      <div class="week-day">
+        <div class="day-label">Fri<br>× 1</div>
+        <div>
+          <div class="day-content-type" style="color:#15803D">Soft Offer (The Harvest)</div>
+          <div class="day-content-desc">A generous CTA disguised as a gift. Free templates, audits, or early access. The offer should deliver real value even if they never buy — it's not a lead magnet trap, it's a genuine giveaway that happens to introduce your product contextually.</div>
+          <div class="day-example">"Giving away the exact outbound audit template we use with new clients this week. 5 spots — just comment 'audit' and I'll DM it over."</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub-head" id="post-templates">Post Templates & Formulas</h3>
+    <p class="body">These are the structures that consistently perform across categories. Adapt the content — keep the shape.</p>
+
+    <div class="framework-grid">
+      <div class="framework-card">
+        <div class="framework-card-num">TEMPLATE A</div>
+        <div class="framework-card-title">The "Here's what actually happened" post</div>
+        <div class="framework-card-body">Share a real outcome with specific numbers, then break down exactly how you got there. No pitch. The authenticity of specific data ("62% reply rate", "4k leads in 48 hours") does the selling for you.</div>
+      </div>
+      <div class="framework-card">
+        <div class="framework-card-num">TEMPLATE B</div>
+        <div class="framework-card-title">The "I made a mistake, here's what I learned" post</div>
+        <div class="framework-card-body">Vulnerability converts in groups. Admitting a failure (and what you'd do differently) generates more trust than any success story. Comments flood in from people who made the same mistake. Natural DM openings everywhere.</div>
+      </div>
+      <div class="framework-card">
+        <div class="framework-card-num">TEMPLATE C</div>
+        <div class="framework-card-title">The Stack Reveal</div>
+        <div class="framework-card-body">Share the exact tools you use for a workflow — your product can be one of them, once you've established presence. "Here's our full outbound stack (with costs)" is one of the highest-engagement post types in any B2B group.</div>
+      </div>
+      <div class="framework-card">
+        <div class="framework-card-num">TEMPLATE D</div>
+        <div class="framework-card-title">The Benchmark Post</div>
+        <div class="framework-card-body">Share an industry data point, then ask the group how they compare. "Industry average for CAC in SMB SaaS is $380 — what are you seeing?" Every reply is a qualified prospect telling you their metrics.</div>
+      </div>
+    </div>
+
+    <!-- PART III: INTENT SIGNALS -->
+    <h2 class="section-head" id="intent-signals">Part III — Intent Signal Monitoring</h2>
+    <p class="body">The highest-value activity in this entire system isn't posting — it's <strong>watching</strong>. You need to be reading every group you're active in, every day, looking for signals that a member is ready for a commercial conversation. Miss these and the whole operation underperforms.</p>
+
+    <div class="signal-grid">
+      <div class="signal-row">
+        <div class="signal-indicator" style="background:#E53E3E"></div>
+        <div class="signal-type">🔴 HOT — AE contact within 2 hours</div>
+        <div>
+          <div class="signal-desc">Direct buying intent: evaluating tools, switching from a competitor, announcing a new budget, or asking for specific recommendations. These are the rarest and most valuable signals.</div>
+          <div class="signal-example">"We're moving off [competitor]. What are people using instead?" / "Just got budget approved for a new [category] tool. What should I be looking at?"</div>
+        </div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-indicator" style="background:#F59E0B"></div>
+        <div class="signal-type">🟡 WARM — Engage publicly, then DM</div>
+        <div>
+          <div class="signal-desc">Problem articulation that your product solves directly. They're not yet asking for a tool, but they're describing the pain in detail. Engage in the thread first (adds credibility), then follow up in DMs.</div>
+          <div class="signal-example">"Our reply rates have been in freefall for 3 months. Tested 4 different approaches. Not sure if it's our copy or the channel at this point."</div>
+        </div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-indicator" style="background:#12B76A"></div>
+        <div class="signal-type">🟢 NURTURE — Tag for long-game engagement</div>
+        <div>
+          <div class="signal-desc">Engaged with your content or commented thoughtfully in a relevant thread. Not buying intent yet, but clear ICP fit and active in the community. Add to a mental watchlist — engage with everything they post until a hotter signal appears.</div>
+          <div class="signal-example">Someone who commented "this is exactly what we're dealing with" on your value post. High-quality engagement but no immediate pain expressed.</div>
+        </div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-indicator" style="background:#94a3b8"></div>
+        <div class="signal-type">⚪ SKIP — Wrong fit or wrong timing</div>
+        <div>
+          <div class="signal-desc">Questions that seem relevant but reveal a mismatch: wrong company size, wrong budget, technical requirements your product doesn't meet. Don't chase these — it poisons your pipeline with unqualifiable leads.</div>
+          <div class="signal-example">"We're a 3-person startup with no budget, looking for free tools." / Question clearly about a workflow your product doesn't touch.</div>
+        </div>
+      </div>
+    </div>
+    <div class="callout callout-warning">
+      <div class="callout-label">Critical: Don't skip monitoring days</div>
+      <p>A hot signal that gets a response 48 hours later is a dead signal. The person has already gotten 10 other responses, possibly from a competitor. Hot and warm signals require same-day response. Build a daily 20-minute monitoring routine or assign it to a dedicated person.</p>
+    </div>
+
+    <!-- DM SCRIPTS -->
+    <h2 class="section-head" id="dm-scripts">DM Scripts (Word-for-Word)</h2>
+    <p class="body">These scripts are derived from hundreds of actual DM conversations that converted to demos. The variables in <span style="color:var(--blue);font-family:'JetBrains Mono',monospace;font-size:13px">[brackets]</span> are where you personalize — don't skip this step. Generic DMs, even ones with good structure, fail. Specific DMs convert.</p>
+
+    <h3 class="sub-head">Script 1 — The Context Reference (for Hot Signals)</h3>
+    <p class="body">Use when someone posts a direct buying signal ("evaluating tools", "moving off a competitor"). Move fast.</p>
+    <div class="script-block">
+      <div class="script-meta"><span class="script-meta-dot" style="background:#E53E3E"></span>BEST FOR: Hot intent signals · Respond within 2 hours</div>
+      <div class="script-step-label">Opening</div>
+      <div class="script-line">Hey <span class="script-var">[First Name]</span> — saw your post about evaluating <span class="script-var">[category/tool]</span> in the <span class="script-var">[Group Name]</span> group. We actually went through the exact same evaluation 8 months ago when we were building <span class="script-var">[product]</span>.</div>
+      <div class="script-step-label">Value before ask</div>
+      <div class="script-line">The thing most people miss when comparing <span class="script-var">[category]</span> tools is <span class="script-var">[specific insight — 1 sentence, not a pitch]</span>. Happy to share what we found if it's useful — not pitching anything, just went deep on this ourselves.</div>
+      <div class="script-step-label">Soft close</div>
+      <div class="script-line">If you're still in evaluation mode, I'm also happy to do a 10-min call and walk through how we approached it. Totally no obligation — I just know how much time these evaluations can waste if you're looking at the wrong criteria.</div>
+      <div class="script-note">* Success rate: ~40% reply, ~60% of replies convert to a call. Key is the "not pitching" frame — it disarms the guard immediately.</div>
+    </div>
+
+    <h3 class="sub-head">Script 2 — The Problem Mirror (for Warm Signals)</h3>
+    <p class="body">Use when someone articulates a pain that your product solves, but isn't explicitly asking for a tool yet.</p>
+    <div class="script-block">
+      <div class="script-meta"><span class="script-meta-dot" style="background:#F59E0B"></span>BEST FOR: Warm signals · Engage in thread first, then DM same day</div>
+      <div class="script-step-label">Opening</div>
+      <div class="script-line">Hey <span class="script-var">[First Name]</span> — commented on your post in <span class="script-var">[Group Name]</span> about <span class="script-var">[the specific problem they mentioned]</span>. I've been thinking about your situation a bit more since then.</div>
+      <div class="script-step-label">Identify the real gap</div>
+      <div class="script-line">Most teams at <span class="script-var">[company stage/type]</span> dealing with that hit a second problem underneath it — <span class="script-var">[deeper root cause that your product addresses]</span>. Is that what you're running into, or is it more of a <span class="script-var">[alternative framing]</span> issue?</div>
+      <div class="script-step-label">Transition (only if they confirm the problem)</div>
+      <div class="script-line">Yeah, that's exactly what we built <span class="script-var">[product]</span> for. We've helped <span class="script-var">[relevant company type]</span> solve that specifically. Want me to show you how it works in a quick 15 min? I can pull up a live example from your exact use case.</div>
+      <div class="script-note">* Don't rush to the pitch. If they reply "it's more of a [X] issue" — follow that thread before introducing the product. The diagnosis IS the demo.</div>
+    </div>
+
+    <h3 class="sub-head">Script 3 — The Offer Fulfillment (after a Soft Offer post)</h3>
+    <p class="body">Use after someone comments "audit" or similar on your Friday soft offer post. High-volume, slightly more direct.</p>
+    <div class="script-block">
+      <div class="script-meta"><span class="script-meta-dot" style="background:#12B76A"></span>BEST FOR: Post-offer responses · Send within 30 minutes of comment</div>
+      <div class="script-step-label">Fulfillment + light qual</div>
+      <div class="script-line">Hey <span class="script-var">[First Name]</span> — sending the <span class="script-var">[template/audit/resource]</span> over now! Before I do — just want to make sure I send you the right version. Are you currently running <span class="script-var">[relevant workflow]</span> in-house or using a tool for it?</div>
+      <div class="script-step-label">Send the resource, then follow up</div>
+      <div class="script-line">Here it is: <span class="script-var">[link to resource]</span>. The part most people find most useful is <span class="script-var">[section name]</span> — especially if you're dealing with <span class="script-var">[their specific situation based on their answer]</span>.</div>
+      <div class="script-step-label">24-hour follow-up (if no reply to above)</div>
+      <div class="script-line">Hey — just checking you got the <span class="script-var">[resource]</span>. Did the <span class="script-var">[section]</span> part make sense for your setup? Happy to walk through it live if it'd be easier — only 10 minutes.</div>
+      <div class="script-note">* The qualification question before sending the resource isn't gatekeeping — it's personalizing. They appreciate it. It also surfaces whether they're a fit before you invest time in a call.</div>
+    </div>
+
+    <h3 class="sub-head">Script 4 — The Warm Reconnect (for Nurture list, 2–4 weeks later)</h3>
+    <p class="body">Use for members on your nurture list who've engaged with your content but showed no immediate intent. Reconnect when a new relevant post surfaces.</p>
+    <div class="script-block">
+      <div class="script-meta"><span class="script-meta-dot" style="background:#94a3b8"></span>BEST FOR: Nurture follow-ups · 2–4 weeks after initial engagement</div>
+      <div class="script-step-label">Reference the original touch</div>
+      <div class="script-line">Hey <span class="script-var">[First Name]</span> — we connected briefly when you commented on my <span class="script-var">[post topic]</span> post in <span class="script-var">[Group Name]</span> a few weeks back.</div>
+      <div class="script-step-label">New value, new reason to talk</div>
+      <div class="script-line">Posted a follow-up this week that goes deeper on <span class="script-var">[topic they engaged with]</span> — figured you might want to see it since it directly addresses the <span class="script-var">[specific thing they commented about]</span>: <span class="script-var">[link or short summary]</span>.</div>
+      <div class="script-step-label">Low-pressure ask</div>
+      <div class="script-line">Also curious — is that still a priority for <span class="script-var">[company]</span> right now, or has other stuff taken over? No agenda, just been thinking about your situation since we last talked.</div>
+      <div class="script-note">* The "no agenda" line matters. It creates psychological safety to say "actually yes, it's a big priority" — which opens the real conversation.</div>
+    </div>
+
+    <!-- HANDOFF -->
+    <h2 class="section-head" id="handoff">The AE Handoff Protocol</h2>
+    <p class="body">When a DM conversation reaches the point of booking a call, the handoff to your AE needs to be seamless. A clumsy transition ("I'll have someone reach out") destroys the trust you've built. Use this protocol:</p>
+    <div class="rule-list">
+      <div class="rule-item">
+        <div class="rule-num">01</div>
+        <div class="rule-body"><strong>Brief the AE before the handoff, not after.</strong> Send a Slack message with: which group the lead came from, the exact post that triggered it, their company and role, what they said their problem was, and what you've already discussed. The AE should never go into a call cold.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">02</div>
+        <div class="rule-body"><strong>Introduce by name, not by title.</strong> "I'm going to connect you with [Name], who does X" not "our sales team will follow up". Keeps the human relationship intact. The prospect trusts you, not an institution.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">03</div>
+        <div class="rule-body"><strong>The first line of the intro DM must reference the group conversation.</strong> "Hey [Name] — this is [AE Name], [person who was posting] mentioned you were dealing with [specific problem]. They said you two were talking about [X] — I'd love to pick up from there." Never start fresh.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">04</div>
+        <div class="rule-body"><strong>Group intelligence person stays available as a resource.</strong> If the prospect goes cold post-handoff, the person who built the relationship in the group can re-engage naturally — much more effectively than a sequence re-enroll.</div>
+      </div>
+    </div>
+
+    <!-- LAUNCH CHECKLIST -->
+    <h2 class="section-head" id="launch-checklist">Part IV — 30-Day Launch Checklist</h2>
+    <p class="body">This is the exact operational sequence for launching group infiltration for a new client or product. Days 1–7 are research-only. No posting until the homework is done.</p>
+    <div class="checklist">
+      <div class="check-item"><div class="check-box">✓</div><span><strong>Days 1–3:</strong> Build candidate group list (20–40 groups). Score each using the 5-factor system. Identify top 5–8 primary groups.</span></div>
+      <div class="check-item"><div class="check-box">✓</div><span><strong>Days 1–3:</strong> Read 30 days of posts in each primary group. Log ICP vocabulary, recurring pain points, top commenters, and competitor mentions.</span></div>
+      <div class="check-item"><div class="check-box">✓</div><span><strong>Days 4–5:</strong> Join all primary groups using the designated persona profile. Write a genuine introduction post that positions as a practitioner, not a vendor.</span></div>
+      <div class="check-item"><div class="check-box">✓</div><span><strong>Days 4–7:</strong> Comment thoughtfully on 10 existing high-engagement threads per group before creating any new posts.</span></div>
+      <div class="check-item"><div class="check-box">✓</div><span><strong>Days 6–7:</strong> Write Week 1 content calendar: 2 deep value posts, 1 quick-win post, 1 engagement trigger, 1 soft offer. Get client approval.</span></div>
+      <div class="check-item"><div class="check-box">✓</div><span><strong>Days 8–14:</strong> Execute Week 1 cadence. Monitor every group daily. Log all comments and engagements. Flag hot and warm signals.</span></div>
+      <div class="check-item"><div class="check-box">✓</div><span><strong>Days 8–14:</strong> Begin DM outreach on hot signals only (Script 1). Maximum 3–5 DMs per day per group to avoid triggering spam filters.</span></div>
+      <div class="check-item"><div class="check-box">✓</div><span><strong>Days 15–21:</strong> Expand warm signal DMs (Script 2). Start building nurture list. Write Week 3 content referencing real comments from Week 1–2 (shows you're reading the room).</span></div>
+      <div class="check-item"><div class="check-box">✓</div><span><strong>Days 22–28:</strong> First soft offer post. Fulfill all comments within 30 minutes. Begin offer fulfillment DM sequence (Script 3) for every responder.</span></div>
+      <div class="check-item"><div class="check-box">✓</div><span><strong>Days 28–30:</strong> Review Week 1–4 performance. Which groups drove the most signal? Which post types drove the most engagement? Double down on what worked, drop what didn't.</span></div>
+    </div>
+
+    <!-- MISTAKES -->
+    <h2 class="section-head" id="mistakes">5 Mistakes That Get You Banned (or Ignored)</h2>
+    <div class="rule-list">
+      <div class="rule-item">
+        <div class="rule-num">01</div>
+        <div class="rule-body"><strong>Posting a product link in week one.</strong> Admins ban for this instantly, and rightly so. You get one chance to make a first impression in a group. Spend it on a genuinely useful post, not a pitch.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">02</div>
+        <div class="rule-body"><strong>Cross-posting identical content across groups.</strong> Group members often belong to multiple groups in your niche. If they see the exact same post word-for-word in three places, your credibility collapses. Customize at minimum the opening and the example for each group.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">03</div>
+        <div class="rule-body"><strong>DM-ing everyone who engages with your post.</strong> Spamming every commenter, even with a good script, is a volume error. It triggers Facebook's spam detection and alienates the members who engaged genuinely. Only DM people who showed clear ICP fit and a warm/hot signal.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">04</div>
+        <div class="rule-body"><strong>Arguing in the comments.</strong> If someone pushes back on your post — and in active groups, they will — never get defensive. Acknowledge their perspective, add nuance, and move on. Losing your composure in a comment thread kills your credibility with every reader who sees it.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">05</div>
+        <div class="rule-body"><strong>Going dark after the first offer converts.</strong> The groups keep running whether you're paying attention or not. A week without engagement is enough for your presence to fade. Consistency is the entire mechanism — this is a channel that rewards showing up repeatedly, not a launch-and-forget play.</div>
+      </div>
+    </div>
+
+    <!-- METRICS -->
+    <h2 class="section-head" id="metrics">How to Measure Success</h2>
+    <p class="body">These are the metrics that actually matter, tracked weekly:</p>
+    <table class="score-table">
+      <thead>
+        <tr><th>Metric</th><th>What to Measure</th><th>Healthy Benchmark</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Post Engagement Rate</strong></td>
+          <td>Comments + reactions ÷ group size</td>
+          <td class="score-high">0.5–2% per post</td>
+        </tr>
+        <tr>
+          <td><strong>Hot Signal Rate</strong></td>
+          <td>Hot signals per 100 posts monitored</td>
+          <td class="score-med">2–5 signals / 100 posts</td>
+        </tr>
+        <tr>
+          <td><strong>DM Reply Rate</strong></td>
+          <td>Replies ÷ DMs sent</td>
+          <td class="score-high">35–50% for Script 1–2</td>
+        </tr>
+        <tr>
+          <td><strong>DM → Call Conversion</strong></td>
+          <td>Calls booked ÷ DM conversations started</td>
+          <td class="score-med">15–25%</td>
+        </tr>
+        <tr>
+          <td><strong>Call → Close Rate</strong></td>
+          <td>Deals closed ÷ calls held</td>
+          <td class="score-high">25–40% (vs 5–10% cold)</td>
+        </tr>
+        <tr>
+          <td><strong>CAC vs Cold Outbound</strong></td>
+          <td">Cost per acquired customer, group vs. cold</td>
+          <td class="score-high">40–70% lower via groups</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-success">
+      <div class="callout-label">Month 1 reality check</div>
+      <p>Don't expect deals in month one. Expect presence. The first 30 days are about establishing your voice and building the warm lead pool that converts in months 2–3. The channel compounds — a pipeline built in month 3 is worth more than one built in month 1, because the trust is deeper. Most clients see their first warm DM lead in week 3–4 and their first closed deal between days 45–75.</p>
+    </div>
+
+    <div style="background:var(--ink);border-radius:var(--r-lg);padding:40px;margin-top:64px;text-align:center">
+      <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;color:#fff;margin-bottom:10px;letter-spacing:-.02em">Want us to run this for you?</div>
+      <p style="font-size:15px;color:rgba(255,255,255,.5);max-width:440px;margin:0 auto 24px;line-height:1.7">Group Reach handles every step of this playbook as a done-for-you service — group mapping, daily content, signal monitoring, and warm DM pipeline handoff to your team.</p>
+      <a href="index.html#apply" style="display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:15px 28px;border-radius:var(--r);font-size:14px;font-weight:600;font-family:'Inter',sans-serif;transition:background .18s">Apply for a Spot — $1,997/mo →</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// Highlight active sidebar link on scroll
+const sections = document.querySelectorAll('[id]');
+const links = document.querySelectorAll('.sidebar-menu a');
+function setActive(){
+  let current='';
+  sections.forEach(s=>{ if(window.scrollY>=s.offsetTop-120) current=s.id; });
+  links.forEach(l=>{
+    l.classList.remove('active');
+    if(l.getAttribute('href')==='#'+current) l.classList.add('active');
+  });
+}
+window.addEventListener('scroll',setActive,{passive:true});
+setActive();
+</script>
+</body>
+</html>
