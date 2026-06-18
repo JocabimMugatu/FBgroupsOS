@@ -82,7 +82,7 @@ function buildApplyConfirmationEmail({ name, email }) {
       <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto;color:#222;line-height:1.6">
         <p>Hey ${escapeHtml(firstName)},</p>
         <p>Thanks for applying to Group Reach. We received your application and review every submission personally — you'll hear back from us within <strong>1 business day</strong>.</p>
-        <p>In the meantime, if you want a head start on understanding the methodology, here's our full <a href="${PLAYBOOK_URL}" style="color:#1A56FF">Group Infiltration Playbook</a> — the exact framework we use for every client.</p>
+        <p>In the meantime, if you want a head start on understanding the methodology, here's our free <a href="${PLAYBOOK_URL}" style="color:#1A56FF">Community-Led Pipeline Playbook</a> — how to find buyer conversations, spot intent signals, and turn private community participation into warm B2B pipeline.</p>
         <p>Talk soon,<br>The Group Reach Team</p>
       </div>
     `
@@ -111,11 +111,11 @@ function buildPlaybookDeliveryEmail({ email }) {
     from: FROM_ADDRESS,
     to: [email],
     reply_to: NOTIFY_TO,
-    subject: 'Your Group Infiltration Playbook is here',
+    subject: 'Your Community-Led Pipeline Playbook is here',
     html: `
       <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto;color:#222;line-height:1.6">
         <p>Hey,</p>
-        <p>Here's the full Group Infiltration Playbook — the group mapping framework, the 4-1-1 content cadence, intent signal monitoring, and word-for-word DM scripts we use for every client.</p>
+        <p>Here's the full Community-Led Pipeline Playbook — the group mapping framework, the content cadence, intent signal monitoring, and the context-rich handoff process we use for every client engagement.</p>
         <p style="margin:28px 0">
           <a href="${PLAYBOOK_URL}" style="background:#1A56FF;color:#fff;padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:600;display:inline-block">Open the Playbook →</a>
         </p>
