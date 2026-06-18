@@ -41,23 +41,31 @@ function escapeHtml(str = '') {
 
 // ---------- APPLY FLOW ----------
 
-function buildApplyInternalEmail({ name, email, company, revenue, about }) {
+function buildApplyInternalEmail({ name, email, company, website, revenue, ltv, about, hangout, groups }) {
   return {
     from: FROM_ADDRESS,
     to: [NOTIFY_TO],
     reply_to: email,
     subject: `New Group Reach Application — ${company}`,
     html: `
-      <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto">
-        <h2 style="font-family:Arial,sans-serif;color:#111">New Application</h2>
+      <div style="font-family:Arial,sans-serif;max-width:580px;margin:0 auto">
+        <h2 style="font-family:Arial,sans-serif;color:#111;margin-bottom:20px">New Application</h2>
         <p><strong>Name:</strong> ${escapeHtml(name)}</p>
         <p><strong>Email:</strong> ${escapeHtml(email)}</p>
         <p><strong>Company:</strong> ${escapeHtml(company)}</p>
-        <p><strong>Monthly Revenue:</strong> ${escapeHtml(revenue) || 'Not provided'}</p>
-        <p><strong>About their product &amp; ICP:</strong></p>
+        <p><strong>Website:</strong> ${escapeHtml(website) || 'Not provided'}</p>
+        <p><strong>Monthly Revenue / Stage:</strong> ${escapeHtml(revenue) || 'Not provided'}</p>
+        <p><strong>Average Customer Value / LTV:</strong> ${escapeHtml(ltv) || 'Not provided'}</p>
+        <p style="margin-top:16px"><strong>Product &amp; ICP:</strong></p>
         <blockquote style="border-left:3px solid #1A56FF;padding-left:12px;color:#444;margin-left:0">
           ${escapeHtml(about).replace(/\n/g, '<br>')}
         </blockquote>
+        <p style="margin-top:16px"><strong>Where buyers hang out online:</strong></p>
+        <blockquote style="border-left:3px solid #12B76A;padding-left:12px;color:#444;margin-left:0">
+          ${escapeHtml(hangout || 'Not provided').replace(/\n/g, '<br>')}
+        </blockquote>
+        <p style="margin-top:16px"><strong>Known relevant groups / competitors:</strong></p>
+        <p style="color:#444">${escapeHtml(groups || 'Not provided')}</p>
       </div>
     `
   };
@@ -146,11 +154,11 @@ exports.handler = async function (event) {
 
   try {
     if (type === 'apply') {
-      const { name, email, company, revenue, about } = body;
+      const { name, email, company, website, revenue, ltv, about, hangout, groups } = body;
       if (!name || !email || !company || !about) {
         return { statusCode: 400, headers, body: JSON.stringify({ error: 'Missing required fields' }) };
       }
-      await sendViaResend(buildApplyInternalEmail({ name, email, company, revenue, about }));
+      await sendViaResend(buildApplyInternalEmail({ name, email, company, website, revenue, ltv, about, hangout, groups }));
       await sendViaResend(buildApplyConfirmationEmail({ name, email }));
       return { statusCode: 200, headers, body: JSON.stringify({ ok: true }) };
     }
